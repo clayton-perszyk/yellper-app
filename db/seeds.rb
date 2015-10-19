@@ -1,11 +1,10 @@
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'nokogiri'
 require 'open-uri'
-
+puts "top"
 doc = Nokogiri::HTML(open('http://www.allmenus.com/wa/seattle/-/?sort=popular'))
-
+puts "pull doc"
 doc.css('.restaurant_name a').each do |url|
+  puts "starting individual restaurants"
   doc = Nokogiri::HTML(open('http://www.allmenus.com/' + url.attribute('href').value))
   address = doc.css('span[itemprop=address]')[0].content.gsub(/\n/, "").gsub(/\s+/," ")
   restaurant_name = doc.css("h1[itemprop=name]")[0].content
