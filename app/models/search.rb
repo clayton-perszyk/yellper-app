@@ -1,3 +1,3 @@
-class Search < ActiveRecord::Base
+  class Search < ActiveRecord::Base
   belongs_to :user
 end
