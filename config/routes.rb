@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#attempt_login'
   post '/signup', to: 'sessions#create'
   delete '/logout', to: 'sessions#logout', as: 'logout'
-  end
+
+  resources :users
+  resources :foods
+end
+

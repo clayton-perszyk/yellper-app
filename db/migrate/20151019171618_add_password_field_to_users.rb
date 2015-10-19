@@ -1,4 +1,4 @@
-class AddPasswordToUser < ActiveRecord::Migration
+class AddPasswordFieldToUsers < ActiveRecord::Migration
   def change
     add_column :users, :password, :string
   end
