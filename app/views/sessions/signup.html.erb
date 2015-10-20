@@ -1,47 +1,32 @@
-<% if @post.errors.any? %>
-  <% @post.errors.full_messages.each do |error| %>
-    <p class= "text-danger">
-      <%= error %>
-    </p>
-  <% end %>
-<% end %>
+  <div class="row">
+    <div id='image-column' class='col-md-3'>
+      <img src='assets/pho.jpg' alt='food pic' class="col-md-3"/>
+      <img src='assets/burgers.jpg' alt='food pic' class="col-md-3"/>
+      <img src='assets/salad.jpg' alt='food pic' class="col-md-3"/>
+    </div>
 
-<%= form_for @signup do |f| %>
-  <div>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+  <div id="signupform" class="col-md-7">
+    <%= form_for(@user, url: signup_path) do |f|%>
+      <p>Username:
+        <%= f.text_field :username, autofocus: true %>
+      </p>
+      <p>Password:
+        <%= f.text_field :password, required: true, type: "password"%>
+      </p>
+      <p>Location:
+        <%= f.text_field :location, required: true %>
+      </p>
+      <p>Email:
+        <%= f.text_field :email, required: true %>
+      </p>
+      <p>Image:
+        <%= f.text_field :image %>
+      </p>
+      <p>
+        <%= f.submit "Signup", class: "btn btn-primary" %>
+      </p>
+        <%= link_to "Have an account already? Log in here", login_path %>
+    <% end %>
   </div>
-  <div>
-    <%= f.label :email %>
-    <%= f.text_area :email %>
-  </div>
-  <div>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-  <div>
-    <%= f.label :imageURL %>
-    <%= f.text_field :imageURL %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password :password %>
-  </div>
-  <div>
-    <%= f.submit 'Signup'%>
-  </div>
-<% end %>
+</div>
 
-<%= form_for @login |f| %>
-  <div>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password :password %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
