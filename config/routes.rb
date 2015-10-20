@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'sessions#login'
 
   get '/login', to: 'sessions#login', as: 'login'
@@ -7,8 +8,13 @@ Rails.application.routes.draw do
   post '/signup', to: 'sessions#create'
   delete '/logout', to: 'sessions#logout', as: 'logout'
 
-  resources :users
-  resources :foods
-  resources :resets, only: [:new, :edit, :create, :update]
-end
+  get '/search', to: 'foods#search', as: 'food_search'
+  get '/search', to: 'foods#search_form', as: 'search_form'
 
+  resources :users
+  resources :resets, only: [:new, :edit, :create, :update]
+
+  resources :foods do
+    resources :restaurants
+  end
+end
