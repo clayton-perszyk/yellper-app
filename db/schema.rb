@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019225110) do
+ActiveRecord::Schema.define(version: 20151020165549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pg_trgm"
-  enable_extension "fuzzystrmatch"
 
   create_table "comments", force: :cascade do |t|
     t.string   "text"
@@ -45,6 +44,7 @@ ActiveRecord::Schema.define(version: 20151019225110) do
     t.string   "image"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "rating_stars"
   end
 
   create_table "searches", force: :cascade do |t|
