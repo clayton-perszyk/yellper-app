@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   end
 
   resources :foods do
-    resources :comments
+    resources :comments, shallow: true
   end
 end

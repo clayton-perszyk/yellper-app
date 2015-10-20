@@ -1,13 +1,4 @@
 class CommentsController < ApplicationController
-  # def index
-  #   @food = Food.find(params[:id])
-  #   redirect_to food_path(@food)
-  # end
-
-  def show
-
-  end
-
   def new
     @food = Food.find(params[:id])
     @comment = Comment.new
@@ -25,11 +16,32 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find(params[:id])
+  end
 
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    if @comment.save
+      flash[:success] = "Comment updated successfully!"
+    else
+      flash[:alert] = "Problem updating comment. Please try agian."
+      render :edit
+    end
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
 
+    if current_user.id == @comment.user.id
+      @food = Food.find(@comment.food.id)
+      @comment.destroy
+      flash[:success] = "Comment deleted successfully."
+      redirect_to @food
+    else
+      flash[:alert] = "Problem with delete"
+      redirect_to :back
+    end
   end
 
   private

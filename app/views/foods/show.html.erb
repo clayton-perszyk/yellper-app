@@ -23,7 +23,13 @@
                 <% end %>
       </li>
     </ul>
-  <% end %>
+      <% if current_user != nil%>
+        <% if current_user.id == comment.user_id %>
+          <%= link_to "Edit", edit_comment_path(comment) %>
+          <%= link_to "Delete", comment, method: :delete, data: {confirm: "Are you sure?"}%>
+        <% end %>
+      <% end %>
+    <% end %>
 </div>
 <% if @current_user != nil%>
   <div class="new comment">
@@ -38,4 +44,3 @@
 <% else %>
   You must <%= link_to "login/signup", signup_path %> to leave a comment.
 <% end %>
-
