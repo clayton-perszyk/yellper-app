@@ -1,6 +1,6 @@
 <div class="col-md-12 test">
   <% @food.each do |food| %>
-    <h3><%= food.name %></h3>
+    <h3><%=link_to "#{food.name}", food_path(food.id) %></h3>
     <blockquote>
       <% if food.description == '' || food.description == nil || food.description == ' '%>
         <p>No description found.</p>
@@ -9,5 +9,15 @@
       <% end %>
       <footer><%= link_to food.restaurant.name, food_restaurant_path(food.id, food.restaurant_id)%></footer>
     </blockquote>
+      <div class="comments">
+    <% food.comments.each do |comment| %>
+      <ul>
+        <li>
+          Rating: <%= comment.rating%><br>
+          Description: <%= comment.text %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
   <% end %>
 </div>

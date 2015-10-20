@@ -29,6 +29,6 @@ class FoodsController < ApplicationController
    @restaurantName = @food.restaurant.name
 
    @restaurant = client.business('Chef-Liao-Asian-Fusion-Cuisine-seattle')
- end
 
+ end
 end
