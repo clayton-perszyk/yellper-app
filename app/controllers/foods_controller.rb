@@ -7,6 +7,10 @@ class FoodsController < ApplicationController
     render :search_form
   end
 
+  def show
+    @food = Food.find(params[:id])
+  end
+
   private
 
   def food_params
