@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
 
   root 'sessions#login'
@@ -12,8 +13,10 @@ Rails.application.routes.draw do
   get '/search', to: 'foods#search_form', as: 'search_form'
 
   resources :users
+  resources :resets, only: [:new, :edit, :create, :update]
 
   resources :foods do
     resources :restaurants
   end
+
 end
