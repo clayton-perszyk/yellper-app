@@ -1,13 +1,4 @@
 class CommentsController < ApplicationController
-  # def index
-  #   @food = Food.find(params[:id])
-  #   redirect_to food_path(@food)
-  # end
-
-  def show
-
-  end
-
   def new
     @food = Food.find(params[:id])
     @comment = Comment.new
