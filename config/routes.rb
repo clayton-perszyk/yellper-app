@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#logout', as: 'logout'
 
   resources :users
-  resources :foods
 
+  resources :foods do
+    resources :restaurants
+  end
 end
 
