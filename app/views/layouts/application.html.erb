@@ -25,7 +25,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <!-- Change users_path to user_path[id] once merged -->
-        <li class="active"><%= link_to 'My Account', users_path %><span class="sr-only">(current)</span></li>
+        <% if @current_user != nil%>
+        <li class="active"><%= link_to 'My Account', user_path(@current_user) %><span class="sr-only">(current)</span></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <div  class="navbar-form navbar-left" >
@@ -35,9 +37,13 @@
           <% end %>
         </div>
         <!-- if user is logged in  -->
+        <% if @current_user != nil%>
         <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+        <% end %>
        <!--  else -->
+        <% if @current_user == nil%>
         <li><%= link_to 'Login/Signup', signup_path %></li>
+        <% end %>
         <!-- end -->
       </ul>
     </div><!-- /.navbar-collapse -->
