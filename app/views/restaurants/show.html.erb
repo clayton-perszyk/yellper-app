@@ -15,6 +15,7 @@
             <br/>
             <% if @restaurant.rating_stars %>
               <img src='<%= @restaurant.rating_stars %>' />
+              <%= @restaurant.review_count %>
             <% end %>
           <% end %>
         </div>
@@ -31,20 +32,6 @@
             <% end %>
         </address>
       <% end %>
-      <% if @restaurant.respond_to? (:deals) %>
-        <b>Deals</b>
-        <% @restaurant.deals.each do |deal| %>
-          <% if deal.respond_to? (:title) %>
-            <% if deal.respond_to? (:url) %>
-              <a href="<%= deal.url %>"><%= deal.title %></a>
-              <br/>
-            <% end %>
-          <% end %>
-        <% end %>
-      <% else %>
-        <b>Deals</b>: None at this time.
-        <br/>
-      <% end %>
       <br/>
       <% if @restaurant.respond_to? (:reviews) %>
         <% @restaurant.reviews.each do |review| %>
@@ -58,7 +45,6 @@
           <br/>
         <% end %>
       <% end %>
-
   <% else %>
    Something went wrong. <%= link_to 'Go Back', :back %>
   <% end %>

@@ -12,11 +12,9 @@
       <div class="comments">
     <% food.comments.each do |comment| %>
       <ul>
-        <li>
-          Username: <%= comment.user_id %><br/>
-          Rating: <%= comment.rating%><br/>
-          Description: <%= comment.text %>
-        </li>
+        Author: <%= comment.user %><br/>
+        Rating: <%= comment.rating%><br/>
+        Description: <%= comment.text %>
       </ul>
     <% end %>
   </div>

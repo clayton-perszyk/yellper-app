@@ -10,7 +10,6 @@
       <footer><%= link_to @food.restaurant.name, food_restaurant_path(@food.id, @food.restaurant_id)%></footer>
     </blockquote>
 
-
 <div class="comments">
   <% @food.comments.each do |comment| %>
     <ul>
@@ -26,7 +25,6 @@
     </ul>
   <% end %>
 </div>
-
 <% if @current_user != nil%>
   <div class="new comment">
       <%= form_for [@food, @comment] do |f| %>
@@ -38,6 +36,6 @@
       <% end %>
   </div>
 <% else %>
-  You must <%= link_to "login", signup_path %> to leave a comment.
+  You must <%= link_to "login/signup", signup_path %> to leave a comment.
 <% end %>
 
