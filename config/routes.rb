@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post '/signup', to: 'sessions#create'
   delete '/logout', to: 'sessions#logout', as: 'logout'
 
+  get '/search', to: 'foods#search', as: 'food_search'
+  get '/search', to: 'foods#search_form', as: 'search_form'
+
   resources :users
 
   resources :foods do
@@ -16,4 +19,3 @@ Rails.application.routes.draw do
   end
 
 end
-
