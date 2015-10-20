@@ -1,0 +1,37 @@
+<div class="col-md-12 test">
+  <%= link_to 'Back to results', :back %>
+  <h1><%= @food.name %></h1>
+      <blockquote>
+      <% if @food.description == '' || @food.description == nil || @food.description == ' '%>
+        <p>No description found.</p>
+      <% else %>
+        <p><%= @food.description %></p>
+      <% end %>
+      <footer><%= link_to @food.restaurant.name, food_restaurant_path(@food.id, @food.restaurant_id)%></footer>
+    </blockquote>
+
+<div class="comments">
+  <% @food.comments.each do |comment| %>
+    <ul>
+      <li>
+        Rating: <%= comment.rating%><br>
+        Description: <%= comment.text %><br>
+        Author: <% if comment.user != nil %>
+                  <%= comment.user.username %>
+                <% else %>
+                <%= "N/A" %>
+                <% end %>
+      </li>
+    </ul>
+  <% end %>
+</div>
+
+
+<div class="new comment">
+    <%= form_for [@food, @comment] do |f| %>
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+      <%= f.label :rating %>
+      <%= f.number_field :rating, max: 5, min: 0 %>
+      <%= f.submit %>
+</div>

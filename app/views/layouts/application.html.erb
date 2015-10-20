@@ -25,19 +25,25 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <!-- Change users_path to user_path[id] once merged -->
-        <li class="active"><%= link_to 'My Account', users_path %><span class="sr-only">(current)</span></li>
+        <% if @current_user != nil%>
+        <li class="active"><%= link_to 'My Account', user_path(@current_user) %><span class="sr-only">(current)</span></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <div  class="navbar-form navbar-left" >
-          <%= form_for :food, url: food_search_path, method: :get do |f| %>
-            <%= f.search_field :name %>
+          <%= form_for Food.new, url: food_search_path, method: :get do |f| %>
+            <%= f.search_field :name, placeholder: "Enter Food Search" %>
             <%= f.submit "search" %>
           <% end %>
         </div>
         <!-- if user is logged in  -->
+        <% if @current_user != nil%>
         <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+        <% end %>
        <!--  else -->
+        <% if @current_user == nil%>
         <li><%= link_to 'Login/Signup', signup_path %></li>
+        <% end %>
         <!-- end -->
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -52,4 +58,3 @@
 </div>
 
 </html>
-
