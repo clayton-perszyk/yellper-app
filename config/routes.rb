@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :foods
+  resources :resets, only: [:new, :edit, :create, :update]
 end
 

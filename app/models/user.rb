@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
       false
     end
     @user = find_by_id(user_id)
-    if timestamp > 4.hours.ago $$ @user
+    if timestamp > 4.hours.ago && @user
       @user
     else
       false
