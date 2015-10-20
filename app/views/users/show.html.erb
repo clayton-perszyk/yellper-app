@@ -1,0 +1,11 @@
+<h2> Hello, <%= @user.username %>! </h2>
+<img src="<%= @user.image %>" alt="profile Picture" />
+
+<div id="accountInfo">
+  <p>Account Information</p>
+  <p>Email: <%= @user.email %></p>
+  <p>Location: <%= @user.location %> </p>
+  <%= link_to "Edit Account", edit_user_path(@user) %>
+</div>
+<%= link_to 'Had enough? Log out!', logout_path, method: :delete %>
+
