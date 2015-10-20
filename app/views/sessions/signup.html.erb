@@ -1,61 +1,13 @@
-<<<<<<< HEAD
-<% if @post.errors.any? %>
-  <% @post.errors.full_messages.each do |error| %>
-    <p class= "text-danger">
-      <%= error %>
-    </p>
-  <% end %>
-<% end %>
-
-<%= form_for @signup do |f| %>
-  <div>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-  <div>
-    <%= f.label :email %>
-    <%= f.text_area :email %>
-  </div>
-  <div>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-  <div>
-    <%= f.label :imageURL %>
-    <%= f.text_field :imageURL %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password :password %>
-  </div>
-  <div>
-    <%= f.submit 'Signup'%>
-  </div>
-<% end %>
-
-<%= form_for @login |f| %>
-  <div>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password :password %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
-=======
-
   <div class="row">
     <div id='image-column' class='col-md-3'>
+    <div id='welcomeImg' class='col-md-4'>
       <img src='assets/pho.jpg' alt='food pic' class="col-md-3"/>
       <img src='assets/burgers.jpg' alt='food pic' class="col-md-3"/>
       <img src='assets/salad.jpg' alt='food pic' class="col-md-3"/>
     </div>
 
-  <div id="signupform" class="col-md-7">
+  <div class="row">
+  <div id="signupform" class="col-md-6">
     <%= form_for(@user, url: signup_path) do |f|%>
       <p>Username:
         <%= f.text_field :username, autofocus: true %>
@@ -79,4 +31,5 @@
     <% end %>
   </div>
 </div>
->>>>>>> master
+</div>
+
