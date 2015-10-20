@@ -1,14 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Yellper</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Yellper</title>
 
-<%= yield %>
+    <!-- Bootstrap -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Yellper</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!-- Change users_path to user_path[id] once merged -->
+        <li class="active"><%= link_to 'My Account', users_path %><span class="sr-only">(current)</span></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <!-- if user is logged in  -->
+        <li><a href="#">Logout</a></li>
+       <!--  else -->
+        <li><a href="/login">Login/Signup</a></li>
+        <!-- end -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-</body>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <%= yield %>
+
+ </body>
+  </div>
+</div>
 </html>
