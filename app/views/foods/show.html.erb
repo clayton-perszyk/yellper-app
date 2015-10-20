@@ -10,7 +10,8 @@
       <footer><%= link_to @food.restaurant.name, food_restaurant_path(@food.id, @food.restaurant_id)%></footer>
     </blockquote>
 
-<div class="comments">
+<button type="button" id="show-comments">Show Comments</button>
+<div class="comments" style="display: none;">
   <% @food.comments.each do |comment| %>
     <ul>
       <li>
@@ -32,7 +33,7 @@
     <% end %>
 </div>
 <% if @current_user != nil%>
-  <div class="new comment">
+  <div class="new-comment">
       <%= form_for [@food, @comment] do |f| %>
         <%= f.label :text %>
         <%= f.text_area :text %>
