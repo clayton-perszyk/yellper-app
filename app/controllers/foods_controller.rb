@@ -6,10 +6,11 @@ class FoodsController < ApplicationController
                              token: 'Z7FZV4BF6Ccxksh1I4TIQ_NPVAvUj727',
                              token_secret: 'iqLpS5jCKQRBrIb3b-aQcptma2s'
                            })
+   @food = Food.all.where(name:'Green Bean Wok')[0]
 
-   @restaurantName = Food.all.where(name:'Green Bean Wok')[0].restaurant.name
+   @restaurantName = @food.restaurant.name
 
-   @food = client.business('Phayathai-Cuisine-seattle')
+   @restaurant = client.business('Chef-Liao-Asian-Fusion-Cuisine-seattle')
 
  end
 end
