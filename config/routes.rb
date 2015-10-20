@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
- resources :restaurants
- resources :foods
- resources :users
-=======
+
   root 'sessions#login'
 
   get '/login', to: 'sessions#login', as: 'login'
@@ -13,7 +9,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#logout', as: 'logout'
 
   resources :users
-  resources :foods
->>>>>>> master
+
+  resources :foods do
+    resources :restaurants
+  end
 end
 
