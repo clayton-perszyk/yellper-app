@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'seed_dump'
+
+gem 'yelp', require: 'yelp'
+
+# gem 'seed_dump'
 
 gem 'bootstrap3-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
