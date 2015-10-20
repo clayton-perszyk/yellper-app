@@ -1,0 +1,75 @@
+
+  <div class="col-md-12 test">
+    <% if @restaurant.respond_to? (:is_closed) %>
+      <% if @restaurant.is_closed == true %>
+        This Restaurant is Closed, please try another.
+        <%= link_to 'Go Back', :back %>
+      <% else %>
+        <div class='row'>
+          <div class='col-md-3'>
+            <% if @restaurant.respond_to? (:image_url) %>
+              <img src='<%= @restaurant.image_url %>' width = '150px' />
+            <% end %>
+          </div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <div class='col-md-9'>
+            <% if @restaurant.respond_to? (:name) %>
+              <% if @restaurant.respond_to? (:url) %>
+                <a href = '<%= @restaurant.url %>'><h1><%= @restaurant.name %></h1></a>
+              <% end %>
+              <br/>
+              <% if @restaurant.respond_to? (:rating_img_url_large) %>
+                <img src='<%= @restaurant.rating_img_url_large %>' />
+              <% end %>
+              <% if @restaurant.respond_to? (:review_count) %>
+                (<%= @restaurant.review_count %> reviews)
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        </br>
+        <% if @restaurant.location.respond_to? (:display_address) %>
+          <address>
+            <strong><%= @restaurant.name %></strong><br>
+            <% @restaurant.location.display_address.each do |address| %>
+              <%= address %>
+              </br>
+            <% end %>
+            <abbr title="Phone">P:</abbr>
+              <% if @restaurant.respond_to? (:display_phone) %>
+                <%= @restaurant.display_phone %>
+              <% end %>
+          </address>
+        <% end %>
+        <% if @restaurant.respond_to? (:deals) %>
+          <b>Deals</b>
+          <% @restaurant.deals.each do |deal| %>
+            <% if deal.respond_to? (:title) %>
+              <% if deal.respond_to? (:url) %>
+                <a href="<%= deal.url %>"><%= deal.title %></a>
+                <br/>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <b>Deals</b>: None at this time.
+          <br/>
+        <% end %>
+        <br/>
+        <% if @restaurant.respond_to? (:reviews) %>
+          <% @restaurant.reviews.each do |review| %>
+            <% if review.respond_to? (:excerpt) %>
+             <%= review.excerpt %>
+            <% end %>
+            <% if review.respond_to? (:rating_image_url) %>
+              <img src='<%= review.rating_image_url %>' />
+            <% end %>
+            <br/>
+            <br/>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% else %>
+     Something went wrong. <%= link_to 'Go Back', :back %>
+    <% end %>
+  </div>

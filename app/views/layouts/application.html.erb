@@ -9,6 +9,8 @@
 
     <!-- Bootstrap -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -20,17 +22,22 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">My Account<span class="sr-only">(current)</span></a></li>
+        <!-- Change users_path to user_path[id] once merged -->
+        <li class="active"><%= link_to 'My Account', users_path %><span class="sr-only">(current)</span></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Search</a></li>
+        <div  class="navbar-form navbar-left" >
+          <%= form_for :food, url: food_search_path do |f| %>
+            <%= f.text_field %>
+            <%= f.submit %>
+          <%end%>
+        </div>
 
         <!-- if user is logged in  -->
-        <li><a href="#">Logout</a></li>
+        <li><%= link_to 'Logout', logout_path, method: :delete %></li>
        <!--  else -->
         <li><a href="/login">Login/Signup</a></li>
         <!-- end -->
-
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -44,3 +51,4 @@
   </div>
 </div>
 </html>
+

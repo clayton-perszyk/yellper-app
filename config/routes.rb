@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+ resources :restaurants
+ resources :foods
+ resources :users
+=======
   root 'sessions#login'
 
   get '/login', to: 'sessions#login', as: 'login'
@@ -9,5 +14,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :foods
+>>>>>>> master
 end
 
