@@ -1,42 +1,33 @@
 <div class="col-md-12 test">
-  <% if @restaurant.respond_to? (:is_closed) %>
-    <% if @restaurant.is_closed == true %>
-      This Restaurant is Closed, please try another.
-      <%= link_to 'Go Back', :back %>
-    <% else %>
+  <% if @restaurant %>
       <div class='row'>
         <div class='col-md-3'>
-          <% if @restaurant.respond_to? (:image_url) %>
-            <img src='<%= @restaurant.image_url %>' width = '150px' />
+          <% if @restaurant.image %>
+            <img src='<%= @restaurant.image %>' width = '150px' />
           <% end %>
         </div>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <div class='col-md-9'>
-          <% if @restaurant.respond_to? (:name) %>
-            <% if @restaurant.respond_to? (:url) %>
-              <a href = '<%= @restaurant.url %>'><h1><%= @restaurant.name %></h1></a>
+          <% if @restaurant.name %>
+            <% if @restaurant.url %>
+              <h1><%= link_to "#{@restaurant.name}", @restaurant.url, :target => "_blank" %></h1>
             <% end %>
             <br/>
-            <% if @restaurant.respond_to? (:rating_img_url_large) %>
-              <img src='<%= @restaurant.rating_img_url_large %>' />
-            <% end %>
-            <% if @restaurant.respond_to? (:review_count) %>
-              (<%= @restaurant.review_count %> reviews)
+            <% if @restaurant.rating_stars %>
+              <img src='<%= @restaurant.rating_stars %>' />
             <% end %>
           <% end %>
         </div>
       </div>
       </br>
-      <% if @restaurant.location.respond_to? (:display_address) %>
+      <% if @restaurant.location %>
         <address>
           <strong><%= @restaurant.name %></strong><br>
-          <% @restaurant.location.display_address.each do |address| %>
-            <%= address %>
-            </br>
-          <% end %>
+          <%= @restaurant.location %>
+          <br/>
           <abbr title="Phone">P:</abbr>
-            <% if @restaurant.respond_to? (:display_phone) %>
-              <%= @restaurant.display_phone %>
+            <% if @restaurant.phone_number %>
+              <%= @restaurant.phone_number %>
             <% end %>
         </address>
       <% end %>
@@ -67,7 +58,7 @@
           <br/>
         <% end %>
       <% end %>
-    <% end %>
+
   <% else %>
    Something went wrong. <%= link_to 'Go Back', :back %>
   <% end %>
