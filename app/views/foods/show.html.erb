@@ -1,10 +1,14 @@
 <div class="col-md-12 test">
-  <%= @food.name %>
-  <br/>
-  <%= @food.description %>
-  <br/>
-  <%= link_to @food.restaurant.name, food_restaurant_path(@food.id, @food.restaurant_id)%>
-</div>
+  <%= link_to 'Back to results', :back %>
+  <h1><%= @food.name %></h1>
+      <blockquote>
+      <% if @food.description == '' || @food.description == nil || @food.description == ' '%>
+        <p>No description found.</p>
+      <% else %>
+        <p><%= @food.description %></p>
+      <% end %>
+      <footer><%= link_to @food.restaurant.name, food_restaurant_path(@food.id, @food.restaurant_id)%></footer>
+    </blockquote>
 
 <div class="comments">
   <% @food.comments.each do |comment| %>
@@ -30,5 +34,4 @@
       <%= f.label :rating %>
       <%= f.number_field :rating, max: 5, min: 0 %>
       <%= f.submit %>
-    <% end %>
 </div>
