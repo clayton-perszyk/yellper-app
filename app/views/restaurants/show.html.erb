@@ -10,7 +10,7 @@
         <div class='col-md-9'>
           <% if @restaurant.name %>
             <% if @restaurant.url %>
-              <a href = '<%= @restaurant.url %>'><h1><%= @restaurant.name %></h1></a>
+              <h1><%= link_to "#{@restaurant.name}", @restaurant.url, :target => "_blank" %></h1>
             <% end %>
             <br/>
             <% if @restaurant.rating_stars %>
