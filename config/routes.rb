@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
 
   root 'sessions#login'
@@ -17,4 +18,5 @@ Rails.application.routes.draw do
   resources :foods do
     resources :restaurants
   end
+
 end
