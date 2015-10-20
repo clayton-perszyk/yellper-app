@@ -1,6 +1,6 @@
 <div class="col-md-12 test">
   <% @food.each do |food| %>
-    <%= food.name %>
+    <%= link_to food.name, food %>
     <br/>
     <%= food.name %>
     <%= food.description %>
