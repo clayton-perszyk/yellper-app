@@ -12,9 +12,10 @@
 
 <button type="button" id="show-comments">Show Comments</button>
 <div class="comments" style="display: none;">
-  <% @food.comments.each do |comment| %>
+  <% @food.comments.reverse.each do |comment| %>
     <ul>
       <li>
+        Posted <%= time_ago_in_words(comment.created_at) %><br>
         Rating: <%= comment.rating%><br>
         Description: <%= comment.text %><br>
         Author: <% if comment.user != nil %>
