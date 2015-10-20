@@ -6,13 +6,17 @@
   <%= link_to @food.restaurant.name, food_restaurant_path(@food.id, @food.restaurant_id)%>
 </div>
 
-
 <div class="comments">
   <% @food.comments.each do |comment| %>
     <ul>
       <li>
         Rating: <%= comment.rating%><br>
-        Description: <%= comment.text %>
+        Description: <%= comment.text %><br>
+        Author: <% if comment.user != nil %>
+                  <%= comment.user.username %>
+                <% else %>
+                <%= "N/A" %>
+                <% end %>
       </li>
     </ul>
   <% end %>

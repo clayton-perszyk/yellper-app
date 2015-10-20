@@ -16,6 +16,10 @@ class CommentsController < ApplicationController
   def create
     @food = Food.find(params[:food_id])
     @comment = Comment.new(comment_params)
+    if current_user
+      @user = User.find(current_user.id)
+      @user.comments << @comment
+    end
     @food.comments << @comment
     redirect_to @food
   end
