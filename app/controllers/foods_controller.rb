@@ -1,6 +1,5 @@
 class FoodsController < ApplicationController
-  def show
-    @search = PgSearch.multisearch 'tacos'
-    #  = search.map { |s| s.searchable.title }
+  def index
+    @food = Food.fuzzy_search('taco')
   end
 end
