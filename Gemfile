@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'seed_dump'
+
 gem 'bootstrap3-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
