@@ -1,6 +1,6 @@
 <div class="col-md-12 test">
   <% @food.each do |food| %>
-    <h3><%=link_to "#{food.name}", food_path(food.id) %></h3>
+    <h3><%= link_to food.name, food %></h3>
     <blockquote>
       <% if food.description == '' || food.description == nil || food.description == ' '%>
         <p>No description found.</p>
@@ -13,7 +13,8 @@
     <% food.comments.each do |comment| %>
       <ul>
         <li>
-          Rating: <%= comment.rating%><br>
+          Username: <%= comment.user_id %><br/>
+          Rating: <%= comment.rating%><br/>
           Description: <%= comment.text %>
         </li>
       </ul>

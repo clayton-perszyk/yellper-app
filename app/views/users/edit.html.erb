@@ -7,10 +7,10 @@
 <% end %>
 
 <%= form_for @user do |f| %>
-  <%= f.text_field :username, autofocus: true, placeholder: :username %>
   <%= f.text_field :email, placeholder: :email %>
   <%= f.text_field :location, placeholder: :location %>
   <%= f.submit %>
 <% end %>
 
 <%= link_to "Go Back", user_path(@user) %>
+<%= link_to "Forgot Password?", new_reset_path %>
