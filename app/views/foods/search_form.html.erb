@@ -1,0 +1,11 @@
+<%= form_for :food, url: food_search_path, method: :get do |f| %>
+  <%= f.label :name %>
+  <%= f.search_field :name %>
+  <%= f.submit "search" %>
+<% end %>
+
+<% if @food != nil%>
+  <% @food.each do |f| %>
+    <%= f.name %>
+  <% end %>
+<% end %>
