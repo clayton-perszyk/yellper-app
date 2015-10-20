@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
 
+
 gem 'seed_dump'
 gem 'yelp'
 gem 'bootstrap3-rails'
+
+# gem 'seed_dump'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'rails', '4.2.4'
 gem 'pg'
@@ -19,9 +24,15 @@ gem 'bcrypt', '~> 3.1.7'
 
 
 
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+gem 'bootstrap3-rails'
+
+
 group :development, :test do
 
   gem 'byebug'
+  gem 'pry'
 end
 
 group :development do
