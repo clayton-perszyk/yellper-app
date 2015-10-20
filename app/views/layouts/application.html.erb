@@ -9,8 +9,20 @@
 
     <!-- Bootstrap -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/style.css">
   </head>
   <body>
+
+    <% flash.each do |key, value| %>
+      <% if key == "notice" %>
+        <%= content_tag :div, value, class: "text-center alert alert-warning" %>
+      <% elsif key == "alert" %>
+        <%= content_tag :div, value, class: "text-center alert alert-danger" %>
+      <% else %>
+        <%= content_tag :div, value, class: "text-center alert alert-success" %>
+      <% end %>
+    <% end %>
+
     <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
