@@ -15,7 +15,7 @@
             <br/>
             <% if @restaurant.rating_stars %>
               <img src='<%= @restaurant.rating_stars %>' />
-              <%= @restaurant.review_count %>
+              ( <%= @restaurant.review_count %> reviews )
             <% end %>
           <% end %>
         </div>
@@ -32,18 +32,10 @@
             <% end %>
         </address>
       <% end %>
-      <br/>
-      <% if @restaurant.respond_to? (:reviews) %>
-        <% @restaurant.reviews.each do |review| %>
-          <% if review.respond_to? (:excerpt) %>
-           <%= review.excerpt %>
-          <% end %>
-          <% if review.respond_to? (:rating_image_url) %>
-            <img src='<%= review.rating_image_url %>' />
-          <% end %>
-          <br/>
-          <br/>
-        <% end %>
+      <% if @restaurant.snippet_text %>
+          <b>Quick Review:</b> <%= @restaurant.snippet_text %>
+      <% else %>
+        No restaurant reviews at this time.
       <% end %>
   <% else %>
    Something went wrong. <%= link_to 'Go Back', :back %>
