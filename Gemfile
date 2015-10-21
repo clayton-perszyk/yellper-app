@@ -1,14 +1,12 @@
 source 'https://rubygems.org'
 
-
 gem 'seed_dump'
 gem 'yelp'
 gem 'bootstrap3-rails'
-
+gem 'bootstrap-sass'
 # gem 'seed_dump'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -19,25 +17,22 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 gem 'bcrypt', '~> 3.1.7'
-
-
-
+gem 'mandrill'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'bootstrap3-rails'
-
 
 group :development, :test do
-
+  gem 'rspec-rails'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
   gem 'byebug'
   gem 'pry'
+  gem 'capybara'
 end
 
 group :development do
-
-  gem 'web-console', '~> 2.0'
+  gem "better_errors"
+  gem "binding_of_caller"
   gem 'pry-rails'
-  gem 'spring'
 end

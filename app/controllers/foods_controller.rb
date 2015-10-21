@@ -3,7 +3,8 @@ class FoodsController < ApplicationController
   end
 
   def search
-    @food = Food.fuzzy_search(food_params) if food_params
+    #Add to search model
+    @food = Food.fuzzy_search(food_params, false) if food_params
     render :search_form
   end
 
@@ -18,7 +19,4 @@ class FoodsController < ApplicationController
     params.require(:food).permit(:name)
   end
 
-  def index
-
- end
 end
