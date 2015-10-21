@@ -7,6 +7,7 @@ gem 'bootstrap-sass'
 # gem 'seed_dump'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails4-autocomplete'
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -19,6 +20,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'mandrill'
+gem "jquery-ui-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
