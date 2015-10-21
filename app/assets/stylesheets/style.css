@@ -36,10 +36,11 @@ ul {
 }
 
 .ui-autocomplete {
-  background-color: white;
+  background-color: rgba(75, 143, 175, 0.71);
   width: 146px;
-  border: 1px solid #ccc;
+  border: 1px solid #484D56;
   border-radius: 4px;
+  color: #484D56;
 }
 
 input#yelperLink {
@@ -52,4 +53,24 @@ input#yelperLink:hover {
   border-bottom: 5px solid #B5B853;
 }
 
+#food_name {
+  background-color: #4B8FAD;
+  border: solid 2px #484D56;
+  color: #484D56;
+}
 
+.btn-default {
+  background-color: #E6E6E6;
+}
+
+.btn-default:hover {
+  background-color: #B5B853;
+}
+
+.navbar-nav>a {
+  color: #4B8FAD;
+}
+
+.btn-primary {
+
+}
