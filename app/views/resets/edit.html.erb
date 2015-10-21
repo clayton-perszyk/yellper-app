@@ -1,6 +1,6 @@
 <h2>Change your password</h2>
 
-<%= form_for :user, url: reset_path(@user.password_reset_token), method: :patch do |f| %>
+<%= form_for :user, url: reset_path(@user.password_token), method: :patch do |f| %>
   <%= f.label :password %>
   <%= f.text_field :password, autofocus: true, type: "password" %>
   <%= f.submit "Reset Password" %>

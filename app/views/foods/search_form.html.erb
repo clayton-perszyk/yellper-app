@@ -1,8 +1,22 @@
 <div class="col-md-12 test">
   <% @food.each do |food| %>
-    <%= link_to food.name, food %>
-    <br/>
-    <%= food.name %>
-    <%= food.description %>
+    <h3><%= link_to food.name, food %></h3>
+    <blockquote>
+      <% if food.description == '' || food.description == nil || food.description == ' '%>
+        <p>No description found.</p>
+      <% else %>
+        <p><%= food.description %></p>
+      <% end %>
+      <footer><%= link_to food.restaurant.name, food_restaurant_path(food.id, food.restaurant_id)%></footer>
+    </blockquote>
+      <div class="comments">
+    <% food.comments.each do |comment| %>
+      <ul>
+        Author: <%= comment.user.username %><br/>
+        Rating: <%= comment.rating%><br/>
+        Description: <%= comment.text %>
+      </ul>
+    <% end %>
+  </div>
   <% end %>
 </div>

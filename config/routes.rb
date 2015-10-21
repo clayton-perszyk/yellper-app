@@ -19,4 +19,7 @@ Rails.application.routes.draw do
     resources :restaurants
   end
 
+  resources :foods do
+    resources :comments, shallow: true
+  end
 end

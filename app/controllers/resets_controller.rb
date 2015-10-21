@@ -7,28 +7,37 @@ class ResetsController < ApplicationController
   def create
     user = User.find_by(email: params[:email])
     if user
+      user.generate_password_reset_token!
       Reset.password_reset(user).deliver_now
-      redirect_to '/login', notice: "Email sent!"
+      redirect_to '/login', flash[:notice] = "Email sent!"
     else
-      flash.now[:alert] = "Email not found"
+      flash[:alert] = "Email not found"
       render :new
     end
   end
 
   def edit
-    if User.find_by_token params[:token]
+    @user = User.find_by(password_token: params[:id])
+    if @user
     else
       redirect_to '/login', alert: "Invalid reset token"
     end
   end
 
   def update
-    user = User.find_by_token params[:token]
-    if user && user.reset_password!(params[:user][:password])
-      session[:user_id] = user.id
-      redirect_to user_path(User.find(params[:id])), flash: {success: "Password updated."}
+    user = User.find_by(password_token: params[:id])
+    if params[:user][:password].present?
+      if @user && @user.update(user_params)
+        @user.update(password_token: nil)
+        session[:user_id] = @user.id
+        redirect_to user_path(@user), flash: {success: "Password updated!"}
+      else
+        flash.now[:notice] = "Password reset token not found."
+        render :edit
+      end
     else
-      redirect_to login_path, alert: "Invalid reset token"
+      flash[:alert] = "Please enter a password"
+      render :edit
     end
   end
 

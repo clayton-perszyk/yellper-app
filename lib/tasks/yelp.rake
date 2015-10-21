@@ -12,13 +12,14 @@ namespace :yelp do
         params = { term: restaurant.name, limit: 1 }
         locale = { lang: 'US' }
         info = client.search('Seattle', params, locale)
-        puts info.businesses[0]
+        puts info.businesses[0].snippet_text
+        puts info.businesses[0].review_count
         if info.businesses[0]
-          restaurant.image = info.businesses[0].image_url if info.businesses[0].image_url
-          restaurant.hours = info.businesses[0].is_closed if info.businesses[0].is_closed
-          restaurant.url = info.businesses[0].url if info.businesses[0].url
-          restaurant.rating_stars = info.businesses[0].rating_img_url_large if info.businesses[0].rating_img_url_large
-          restaurant.phone_number = info.businesses[0].display_phone if info.businesses[0].display_phone
+          restaurant.snippet_text = info.businesses[0].snippet_text if info.businesses[0].snippet_text
+          restaurant.review_count = info.businesses[0].review_count if info.businesses[0].review_count
+          # restaurant.url = info.businesses[0].url if info.businesses[0].url
+          # restaurant.rating_stars = info.businesses[0].rating_img_url_large if info.businesses[0].rating_img_url_large
+          # restaurant.phone_number = info.businesses[0].display_phone if info.businesses[0].display_phone
           restaurant.save
         end
       end
