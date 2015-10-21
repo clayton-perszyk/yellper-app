@@ -16,8 +16,10 @@ $(document).ready(function(){
     $('.edit').toggle('fast', function () {
       var display = $('.edit').css('display');
       if (display == 'none') {
+        $('.original-comment').show()
         $('#edit-comment').text("Edit Comment")
       } else {
+        $('.original-comment').hide()
         $('#edit-comment').text("Cancel")
       }
     });
