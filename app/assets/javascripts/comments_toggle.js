@@ -10,12 +10,4 @@ $(document).ready(function(){
       }
     });
   });
-
-  // $('.new_comment').on('submit', function(){
-  //   $comments = $('.comments');
-  //   $comments.toggle('click', function(){
-  //     $comments.css('display', 'block');
-  //     $('#show-comments').text("Hide Comments");
-  //   });
-  // });
 });

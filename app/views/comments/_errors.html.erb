@@ -1,0 +1,9 @@
+<% if @comment.errors.any? %>
+  <% @comment.errors.full_messages.each do |error| %>
+    <div class="errors">
+      <p class="text-danger">
+        <%= error%>
+      </p>
+    </div>
+  <% end %>
+<% end %>
