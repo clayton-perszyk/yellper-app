@@ -13,9 +13,8 @@ $(document).ready(function(){
 
   $('.edit-comment').on('click', function(e) {
     e.preventDefault();
-
     $('.edit').toggle('fast', function () {
-      var display = $('.edit').css('display');
+      var display = $(this).css('display');
       if (display == 'none') {
         $('.original-comment').show()
         $('.edit-comment').text("Edit Comment")
@@ -26,11 +25,4 @@ $(document).ready(function(){
     });
   });
 
-  // $('.new_comment').on('submit', function(){
-  //   $comments = $('.comments');
-  //   $comments.toggle('click', function(){
-  //     $comments.css('display', 'block');
-  //     $('#show-comments').text("Hide Comments");
-  //   });
-  // });
 });
