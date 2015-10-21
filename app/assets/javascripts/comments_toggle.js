@@ -10,4 +10,13 @@ $(document).ready(function(){
       }
     });
   });
+
+  $('.new_comment').submit(function(e){
+    e.preventDefault();
+    $comments = $('.comments');
+    $comments.toggle('click', function(){
+      $comments.css('display', 'block');
+    });
+
+  });
 });
