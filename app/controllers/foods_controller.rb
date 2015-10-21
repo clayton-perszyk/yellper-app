@@ -19,7 +19,4 @@ class FoodsController < ApplicationController
     params.require(:food).permit(:name)
   end
 
-  def index
-
- end
 end
