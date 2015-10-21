@@ -10,28 +10,42 @@
       <footer><%= link_to @food.restaurant.name, food_restaurant_path(@food.id, @food.restaurant_id)%></footer>
     </blockquote>
 
-<div class="comments">
-  <% @food.comments.each do |comment| %>
-    <ul>
-      <li>
-        Rating: <%= comment.rating%><br>
-        Description: <%= comment.text %><br>
-        Author: <% if comment.user != nil %>
-                  <%= comment.user.username %>
-                <% else %>
-                <%= "N/A" %>
-                <% end %>
-      </li>
-    </ul>
-  <% end %>
+<div class="col-md-4">
+  <button type="button" id="show-comments">Show Comments</button>
+  <div class="comments" style="display: none;">
+    <% @food.comments.reverse.each do |comment| %>
+      <ul>
+        <li>
+          Posted <%= time_ago_in_words(comment.created_at) %><br>
+          Rating: <%= comment.rating%><br>
+          Description: <%= comment.text %><br>
+          Author: <% if comment.user != nil %>
+                    <%= comment.user.username %>
+                  <% else %>
+                  <%= "N/A" %>
+                  <% end %>
+        </li>
+      </ul>
+        <% if current_user != nil%>
+          <% if current_user.id == comment.user_id %>
+            <%= link_to "Edit", edit_comment_path(comment) %>
+            <%= link_to "Delete", comment, method: :delete, data: {confirm: "Are you sure?"}%>
+          <% end %>
+        <% end %>
+      <% end %>
+  </div>
 </div>
 
-
-<div class="new comment">
-    <%= form_for [@food, @comment] do |f| %>
-      <%= f.label :text %>
-      <%= f.text_area :text %>
-      <%= f.label :rating %>
-      <%= f.number_field :rating, max: 5, min: 0 %>
-      <%= f.submit %>
-</div>
+<% if @current_user != nil%>
+  <div class="new-comment col-md-4">
+      <%= form_for [@food, @comment] do |f| %>
+        <%= f.label :text %>
+        <%= f.text_area :text %><br>
+        <%= f.label :rating %>
+        <%= f.number_field :rating, max: 5, min: 0 %><br>
+        <%= f.submit %>
+      <% end %>
+  </div>
+<% else %>
+  You must <%= link_to "login/signup", signup_path %> to leave a comment.
+<% end %>
