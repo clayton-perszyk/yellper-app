@@ -20,7 +20,11 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" id="yelperLink" href="#">Yelper</a>
+      <%= form_for Food.new, url: random_path, method: :get do |f| %>
+        <!-- <a class="navbar-brand" id="yelperLink" href="#">Yelper</a> -->
+        <%= f.submit "Yelper", class: "navbar-brand" ,id: "yelperLink"  %>
+      <% end %>
+
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -33,9 +37,11 @@
       <ul class="nav navbar-nav navbar-right">
         <div  class="navbar-form navbar-left" >
           <%= form_for Food.new, url: food_search_path, method: :get do |f| %>
-            <%= f.search_field :name, class: "form-control", placeholder: "Enter Food Search" %>
+            <%= f.autocomplete_field :name, autocomplete_food_name_foods_path, class: "form-control", placeholder: "Enter Food Search" %>
             <%= f.submit "search", class: "btn btn-default" %>
           <% end %>
+
+
         </div>
         <!-- if user is logged in  -->
         <% if @current_user != nil%>
@@ -43,7 +49,8 @@
         <% end %>
        <!--  else -->
         <% if @current_user == nil%>
-        <li><%= link_to 'Login/Signup', signup_path %></li>
+        <li><%= link_to 'Login', login_path %></li>
+        <li><%= link_to 'Signup', signup_path %></li>
         <% end %>
         <!-- end -->
       </ul>

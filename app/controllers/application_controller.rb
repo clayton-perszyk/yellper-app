@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
-require 'yelp'
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  autocomplete :food, :name
   protect_from_forgery with: :exception
   before_action :current_user
-
   def confirm_logged_in
     unless session[:user_id]
       redirect_to login_path, alert: "Please log in"
