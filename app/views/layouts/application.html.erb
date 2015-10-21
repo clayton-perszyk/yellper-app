@@ -21,8 +21,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <%= form_for Food.new, url: random_path, method: :get do |f| %>
-        <!-- <a class="navbar-brand" id="yelperLink" href="#">Yelper</a> -->
-        <%= f.submit "Yelper", class: "navbar-brand" ,id: "yelperLink"  %>
+        <%= f.submit "Yelper", :type => :image, :src => "assets/logoHover.png", class: "navbar-brand", id: "yelperLink"%>
       <% end %>
 
     </div>
