@@ -1,9 +1,34 @@
 body {
-  padding: 1% 1% 1% 1%;
+  padding-bottom: 1%;
+  background-color: #DDD1B9;
 }
 
-.comments {
-  display: none;
+.stockPhoto {
+  height: 50%;
+  width: 50%;
+  margin-bottom: 5%;
+  border: 3px solid #B5B853;
+}
+
+.navbar {
+  width: 101%;
+  background-color: #484D56;
+  color: #4B8FAD;
+}
+
+#yelperLink, #loginLink, #logoutLink {
+  background-color: #484D56;
+  color: #4B8FAD;
+}
+
+a {
+ color: #4B8FAD;
+}
+
+#loginform, #signupform {
+  border: 5px solid #484D56;
+  border-radius: 5px;
+  padding: 3px 3px 3px 3px;
 }
 
 ul {
@@ -16,3 +41,15 @@ ul {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+input#yelperLink {
+  height: 30%;
+  width: 30%;
+  border-bottom: 5px solid #484D56;
+}
+
+input#yelperLink:hover {
+  border-bottom: 5px solid #B5B853;
+}
+
+
