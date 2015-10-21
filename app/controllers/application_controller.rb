@@ -13,7 +13,7 @@ require 'yelp'
 
   def prevent_login_signup
     if session[:user_id]
-      redirect_to user_path(User.find(params[:id])), notice: "You are already logged in"
+      redirect_to root_path
     end
   end
 
