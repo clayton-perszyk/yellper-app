@@ -4,7 +4,7 @@ class FoodsController < ApplicationController
 
   def search
     #Add to search model
-    @food = Food.fuzzy_search(food_params) if food_params
+    @food = Food.fuzzy_search(food_params, false) if food_params
     render :search_form
   end
 
