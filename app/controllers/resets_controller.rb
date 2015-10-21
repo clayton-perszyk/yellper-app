@@ -8,7 +8,7 @@ class ResetsController < ApplicationController
       ResetMailer.password_reset(user).deliver_now
       redirect_to login_path, notice: "email sent"
     else
-      flash.now[:alert] = "Email not found"
+      flash[:alert] = "Email not found"
       render :new
     end
   end
@@ -36,7 +36,7 @@ class ResetsController < ApplicationController
         render :edit
       end
     else
-      flash.now[:alert] = "Please enter a password"
+      flash[:alert] = "Please enter a password"
       render :edit
     end
   end
