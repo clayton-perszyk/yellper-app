@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
         redirect_to user_path(User.find(found_user.id))
       else
         flash[:alert] = "Please enter a valid username and password"
-        redirect_to '/signup'
+        redirect_to signup_path
       end
     end
   end
