@@ -21,11 +21,14 @@ class SessionsController < ApplicationController
       found_user = User.where(username: params[:username]).first
       if found_user && found_user.authenticate(params[:password])
         session[:user_id] = found_user.id
-        redirect_to user_path(User.find(found_user.id))
+        redirect_to home_path
       else
-        flash[:alert] = "Please enter a valid username and password"
-        redirect_to '/signup'
+        flash[:alert] = "username / password combination is invalid"
+        redirect_to login_path(@user)
       end
+    else
+      flash[:alert] = "please enter username and password"
+      redirect_to login_path
     end
   end
 
