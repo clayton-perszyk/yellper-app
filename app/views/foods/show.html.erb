@@ -13,10 +13,10 @@
 <div class="col-md-4">
   <button type="button" id="show-comments">Show Comments</button>
   <div class="comments">
-    <% @food.comments.reverse.each do |comment| %>
+    <% @food.comments.each do |comment| %>
       <ul>
         <li>
-          Posted <%= time_ago_in_words(comment.created_at) %><br>
+          Posted <%= time_ago_in_words(comment.created_at) %> ago<br>
           Rating: <%= comment.rating%><br>
           Description: <%= comment.text %><br>
           Author: <% if comment.user != nil %>
