@@ -12,7 +12,7 @@
 
 <div class="col-md-4">
   <button type="button" id="show-comments">Show Comments</button>
-  <div class="comments" style="display: none;">
+  <div class="comments">
     <% @food.comments.reverse.each do |comment| %>
       <ul>
         <li>
@@ -22,7 +22,7 @@
           Author: <% if comment.user != nil %>
                     <%= comment.user.username %>
                   <% else %>
-                  <%= "N/A" %>
+                    <%= "N/A" %>
                   <% end %>
         </li>
       </ul>
@@ -38,7 +38,7 @@
 
 <% if @current_user != nil%>
   <div class="new-comment col-md-4">
-      <%= form_for [@food, @comment] do |f| %>
+      <%= form_for [@food, @comment], class: "new-comment" do |f| %>
         <%= f.label :text %>
         <%= f.text_area :text %><br>
         <%= f.label :rating %>
