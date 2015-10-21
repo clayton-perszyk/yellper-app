@@ -9,10 +9,10 @@
       <% end %>
       <footer><%= link_to food.restaurant.name, food_restaurant_path(food.id, food.restaurant_id)%></footer>
     </blockquote>
-      <div class="comments">
+    <div class="comments">
     <% food.comments.each do |comment| %>
       <ul>
-        Author: <%= comment.user.username %><br/>
+        Author: <%= comment.user %><br/>
         Rating: <%= comment.rating%><br/>
         Description: <%= comment.text %>
       </ul>

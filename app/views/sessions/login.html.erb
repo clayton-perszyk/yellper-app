@@ -1,11 +1,11 @@
-<div id='welcomeImg' class='col-md-4'>
-  <img src='assets/pho.jpg' alt='food pic' class="col-md-3"/>
-  <img src='assets/burgers.jpg' alt='food pic' class="col-md-3"/>
-  <img src='assets/salad.jpg' alt='food pic' class="col-md-3"/>
+<div id='welcomeImg' class="row col-xs-4 col-md-4">
+    <img src='assets/pho.jpg' alt='food pic' class="stockPhoto" />
+    <img src='assets/burgers.jpg' alt='food pic' class="stockPhoto" />
+    <img src='assets/salad.jpg' alt='food pic' class="stockPhoto" />
 </div>
 
-<div id="loginform" class="col-md-6">
-<%= form_tag(login_path) do %>
+<div id="loginform" class="col-xs-6 col-md-6">
+  <%= form_tag(login_path) do %>
 
   <%= label_tag(:username) %>
   <%= text_field_tag(:username, params[:username], autofocus: true, required: true) %>
@@ -19,3 +19,4 @@
   <br/>
   <%= link_to "Forgot Password?", new_reset_path %>
 </div>
+

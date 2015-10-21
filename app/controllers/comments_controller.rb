@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
     @comment.update(comment_params)
     if @comment.save
       flash[:success] = "Comment updated successfully!"
-      redirect_to food_comments(@comment.food_id)
+      redirect_to :back
     else
       flash[:alert] = "Problem updating comment. Please try agian."
       render :edit
