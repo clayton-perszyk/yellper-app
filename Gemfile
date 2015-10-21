@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'seed_dump'
 gem 'yelp'
 gem 'bootstrap3-rails'
-
+gem 'bootstrap-sass'
 # gem 'seed_dump'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
