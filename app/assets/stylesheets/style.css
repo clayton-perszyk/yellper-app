@@ -1,4 +1,29 @@
 body {
   padding: 1% 1% 1% 1%;
+  background-color: #DDD1B9;
+}
+
+.stockPhoto {
+  height: 50%;
+  width: 50%;
+}
+
+.navbar {
+  background-color: #484D56;
+  color: #4B8FAD;
+}
+
+#yelperLink, #loginLink, #logoutLink {
+  color: #4B8FAD;
+}
+
+a {
+ color: #4B8FAD;
+}
+
+#loginform, #signupform {
+  border: 5px solid #484D56;
+  border-radius: 5px;
+  padding: 3px 3px 3px 3px;
 }
 

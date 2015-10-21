@@ -39,11 +39,11 @@
         </div>
         <!-- if user is logged in  -->
         <% if @current_user != nil%>
-        <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+        <li><%= link_to 'Logout', logout_path, method: :delete, id: 'logoutLink' %></li>
         <% end %>
        <!--  else -->
         <% if @current_user == nil%>
-        <li><%= link_to 'Login/Signup', signup_path %></li>
+        <li><%= link_to 'Login/Signup', signup_path, id: 'loginLink' %></li>
         <% end %>
         <!-- end -->
       </ul>
