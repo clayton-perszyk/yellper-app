@@ -4,6 +4,9 @@ class FoodsController < ApplicationController
 
   def search
     #Add to search model
+    if Search.find_by_query(food_params['name']) == nil
+        Search.create(:query => food_params['name'])
+    end
     @food = Food.fuzzy_search(food_params, false) if food_params
     render :search_form
   end

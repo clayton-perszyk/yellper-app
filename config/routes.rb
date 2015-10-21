@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :resets, only: [:new, :edit, :create, :update]
 
   resources :foods do
-    get :autocomplete_food_name, :on => :collection
+    get :autocomplete_search_query, :on => :collection
     resources :restaurants
   end
 
