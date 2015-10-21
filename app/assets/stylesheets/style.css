@@ -43,6 +43,10 @@ ul {
   color: #484D56;
 }
 
+.error {
+  color: red;
+}
+
 input#yelperLink {
   height: 30%;
   width: 30%;
@@ -74,3 +78,4 @@ input#yelperLink:hover {
 .btn-primary {
 
 }
+
