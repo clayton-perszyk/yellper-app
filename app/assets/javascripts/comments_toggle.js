@@ -11,6 +11,18 @@ $(document).ready(function(){
     });
   });
 
+  $('#show-editComments').on('click', function(e) {
+    e.preventDefault();
+    $('.editComments').toggle('slow', function () {
+      var display = $('.editComments').css('display');
+      if (display == 'none') {
+        $('#show-editComments').text("Edit")
+      } else {
+        $('#show-editComments').text("goodbye")
+      }
+    });
+  });
+
   // $('.new_comment').on('submit', function(){
   //   $comments = $('.comments');
   //   $comments.toggle('click', function(){
