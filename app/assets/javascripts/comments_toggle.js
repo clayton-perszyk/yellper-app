@@ -13,25 +13,17 @@ $(document).ready(function(){
 
   $('.edit-comment').on('click', function(e) {
     e.preventDefault();
-
-    $('.edit').toggle('fast', function () {
-      var display = $('.edit').css('display');
-      if (display == 'none') {
+    var self = this
+    $(this).parent().children('.edit').toggle('fast', function () {
+      var display = $(self).css('display');
+      console.log(this)
+      if ($(self).text() == 'Cancel') {
         $('.original-comment').show();
-        $('.edit-comment').text("Edit Comment");
+        $(self).text("Edit Comment");
       } else {
         $('.original-comment').hide();
-        $('.edit-comment').text("Cancel");
+        $(self).text("Cancel");
       }
     });
   });
-
-  // TODO: Trigger click event to drop comments down
-  // $('.new_comment').on('submit', function(){
-  //   $comments = $('.comments');
-  //   $comments.toggle('click', function(){
-  //     $comments.css('display', 'block');
-  //     $('#show-comments').text("Hide Comments");
-  //   });
-  // });
 });
