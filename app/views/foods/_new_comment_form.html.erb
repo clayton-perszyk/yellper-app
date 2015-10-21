@@ -1,0 +1,13 @@
+<% if @current_user != nil%>
+  <div class="new-comment col-md-4">
+      <%= form_for [@food, @comment], class: "new-comment" do |f| %>
+        <%= f.label :text %>
+        <%= f.text_area :text %><br>
+        <%= f.label :rating %>
+        <%= f.number_field :rating, max: 5, min: 0 %><br>
+        <%= f.submit %>
+      <% end %>
+  </div>
+<% else %>
+  You must <%= link_to "login/signup", signup_path %> to leave a comment.
+<% end %>

@@ -1,0 +1,31 @@
+<button type="button" id="show-comments">Show Comments</button>
+<div class="comments">
+  <% if @food.comments.count > 0 %>
+    <div class="comments">
+      <% @food.comments.each do |comment| %>
+        <ul>
+          <li>
+            Posted <%= time_ago_in_words(comment.created_at) %> ago<br>
+            Rating: <%= comment.rating%><br>
+            Description: <%= comment.text %><br>
+            Author: <% if comment.user != nil %>
+                      <%= comment.user.username %>
+                    <% else %>
+                      <%= "N/A" %>
+                    <% end %>
+          </li>
+        </ul>
+          <% if current_user != nil%>
+            <% if current_user.id == comment.user_id %>
+              <%= link_to "Edit", edit_comment_path(comment) %>
+              <%= link_to "Delete", comment, method: :delete, data: {confirm: "Are you sure?"}%>
+            <% end %>
+          <% end %>
+        <% end %>
+    </div>
+  <% else %>
+    <p>
+      Be the first to add a comment!
+    </p>
+  <% end %>
+</div>
