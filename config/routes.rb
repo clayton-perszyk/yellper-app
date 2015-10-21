@@ -11,11 +11,11 @@ Rails.application.routes.draw do
 
   get '/search', to: 'foods#search', as: 'food_search'
   get '/search', to: 'foods#search_form', as: 'search_form'
-
   resources :users
   resources :resets, only: [:new, :edit, :create, :update]
 
   resources :foods do
+    get :autocomplete_food_name, :on => :collection
     resources :restaurants
   end
 
