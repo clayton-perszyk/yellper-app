@@ -36,12 +36,12 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <div  class="navbar-form navbar-left" >
-          <% if @current_user != nil%>
-            <%= form_for Food.new, url: food_search_path, method: :get do |f| %>
-              <%= f.search_field :name, class: "form-control", placeholder: "Enter Food Search" %>
-              <%= f.submit "search", class: "btn btn-default" %>
-            <% end %>
+          <%= form_for Food.new, url: food_search_path, method: :get do |f| %>
+            <%= f.autocomplete_field :name, autocomplete_food_name_foods_path, class: "form-control", placeholder: "Enter Food Search" %>
+            <%= f.submit "search", class: "btn btn-default" %>
           <% end %>
+
+
         </div>
         <!-- if user is logged in  -->
         <% if @current_user != nil%>

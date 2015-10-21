@@ -5,3 +5,14 @@ body {
 .comments {
   display: none;
 }
+
+ul {
+  list-style: none;
+}
+
+.ui-autocomplete {
+  background-color: white;
+  width: 146px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
