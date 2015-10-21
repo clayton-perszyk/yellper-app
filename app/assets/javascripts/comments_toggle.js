@@ -11,14 +11,14 @@ $(document).ready(function(){
     });
   });
 
-  $('#show-editComments').on('click', function(e) {
+  $('#edit-comment').on('click', function(e) {
     e.preventDefault();
-    $('.editComments').toggle('slow', function () {
-      var display = $('.editComments').css('display');
+    $('.edit').toggle('fast', function () {
+      var display = $('.edit').css('display');
       if (display == 'none') {
-        $('#show-editComments').text("Edit")
+        $('#edit-comment').text("Edit Comment")
       } else {
-        $('#show-editComments').text("goodbye")
+        $('#edit-comment').text("Cancel")
       }
     });
   });
