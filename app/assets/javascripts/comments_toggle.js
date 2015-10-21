@@ -11,12 +11,11 @@ $(document).ready(function(){
     });
   });
 
-  $('.new_comment').submit(function(e){
-    e.preventDefault();
-    $comments = $('.comments');
-    $comments.toggle('click', function(){
-      $comments.css('display', 'block');
-    });
-
-  });
+  // $('.new_comment').on('submit', function(){
+  //   $comments = $('.comments');
+  //   $comments.toggle('click', function(){
+  //     $comments.css('display', 'block');
+  //     $('#show-comments').text("Hide Comments");
+  //   });
+  // });
 });

@@ -9,8 +9,18 @@ Rails.application.routes.draw do
   post '/signup', to: 'sessions#create'
   delete '/logout', to: 'sessions#logout', as: 'logout'
 
+
+
   get '/search', to: 'foods#search', as: 'food_search'
   get '/search', to: 'foods#search_form', as: 'search_form'
+<<<<<<< HEAD
+=======
+
+  # random food search link
+  get 'random_search', to: 'foods#random', as: 'random'
+  
+
+>>>>>>> 11e6d93ca96d8286b0b08ebbd48a65b45818c2d6
   resources :users
   resources :resets, only: [:new, :edit, :create, :update]
 
