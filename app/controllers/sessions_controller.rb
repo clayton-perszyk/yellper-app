@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       found_user = User.where(username: params[:username]).first
       if found_user && found_user.authenticate(params[:password])
         session[:user_id] = found_user.id
-        redirect_to home_path
+        redirect_to user_path(found_user.id)
       else
         flash[:alert] = "username / password combination is invalid"
         redirect_to login_path(@user)
