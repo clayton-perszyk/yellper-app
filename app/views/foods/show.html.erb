@@ -1,10 +1,12 @@
 <%= render 'errors' %>
-<div class="col-md-12 test">
-  <%= render 'food_description', food_leader: "" %>
-</div>
-<div class="col-md-4">
-  <%= render 'comments_display' %>
-</div>
-<div>
-  <%= render 'new_comment_form' %>
+<div class="row">
+  <div class="col-md-3 comment-display">
+    <%= render 'comments_display' %>
+  </div>
+  <div class="col-md-6 test">
+    <%= render 'food_description', food_leader: "" %>
+  </div>
+  <div class="col-md-3 new-comment">
+    <%= render 'new_comment_form' %>
+  </div>
 </div>
