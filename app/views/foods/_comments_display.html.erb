@@ -17,7 +17,7 @@
       </ul>
         <% if current_user != nil%>
           <% if current_user.id == comment.user_id %>
-            <div class='edit' hidden>
+            <div class='edit'  data-id="<%= comment.id %>",hidden>
               <%= form_for [@food, @comment], url: comment_path(comment.id), method: :patch do |f| %>
               <%= f.label :text, "Description" %>
               <%= f.text_area :text, value: "#{comment.text}"%><br>
@@ -26,7 +26,7 @@
               <%= f.submit "Edit Comment"%>
             </div>
           <% end %>
-          <a class='edit-comment'>Edit Comment</a> |
+          <a class='edit-comment' data-id="<%= comment.id %>">Edit Comment</a> |
           <%= link_to "Delete", comment, method: :delete, data: {confirm: "Are you sure?"}%>
           <br/>
           <br/>

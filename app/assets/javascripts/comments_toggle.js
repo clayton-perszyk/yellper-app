@@ -11,21 +11,6 @@ $(document).ready(function(){
     });
   });
 
-  $('.edit-comment').on('click', function(e) {
-    e.preventDefault();
-
-    $('.edit').toggle('fast', function () {
-      var display = $('.edit').css('display');
-      if (display == 'none') {
-        $('.original-comment').show();
-        $('.edit-comment').text("Edit Comment");
-      } else {
-        $('.original-comment').hide();
-        $('.edit-comment').text("Cancel");
-      }
-    });
-  });
-
   // TODO: Trigger click event to drop comments down
   // $('.new_comment').on('submit', function(){
   //   $comments = $('.comments');
