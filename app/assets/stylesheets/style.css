@@ -11,6 +11,10 @@ pre {
   border-width: 1px;
 }
 
+.links a {
+  color: #484D56;
+}
+
 .edit {
   margin: 0px;
   padding: 0px;

@@ -20,7 +20,7 @@
     </div>
     <div class='col-md-5'>
       <div class="comment-container userpage">
-        <a class='edit-comment'>Edit Comment</a>
+        <a class='edit-comment'>Edit Comment</a> | <%= link_to "Delete", comment, method: :delete, data: {confirm: "Are you sure?"}%>
         <div class='edit' hidden>
           <%= form_for [comment.food, comment], url: comment_path(comment.id), method: :patch do |f| %>
           <%= f.label :text, "Description" %>:
@@ -29,7 +29,6 @@
           <%= f.number_field :rating, max: 5, min: 0, value: "#{comment.rating}" %><br/>
           <%= f.submit "Edit Comment"%>
         </div>
-        <%= link_to "Delete", comment, method: :delete, data: {confirm: "Are you sure?"}%>
       <% end %>
     </div>
     </pre>
