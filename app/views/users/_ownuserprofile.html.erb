@@ -1,0 +1,18 @@
+<h2> Hello, <%= @user.username %>! </h2>
+<img src="<%= @user.image %>" alt="profile Picture" />
+
+<div id="accountInfo">
+  <h4>Account Information <small><%= link_to "Edit Account", edit_user_path(@user) %></small></h4>
+  <p><b>Email: </b> <%= @user.email %></p>
+  <p><b>Location: </b> <%= @user.location %> </p>
+</div>
+<div>
+  <p><h4>Your Reviews</h4></p>
+  <% @user.comments.each do |comment| %>
+    <b>Restaurant: </b><%= link_to "#{comment.food.restaurant.name}" %><br/>
+    <b>Food: </b><%= link_to "#{comment.food.name}", food_path %><br/>
+    <b>Comment: </b><%= comment.text %><br/>
+    <b>Rating: </b><%= comment.rating %><br/>
+    <br/>
+  <% end %>
+</div>

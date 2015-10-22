@@ -12,14 +12,6 @@ $(document).ready(function(){
     });
   });
 
-  // TODO: Trigger click event to drop comments down
-  // $('.new_comment').on('submit', function(){
-  //   $comments = $('.comments');
-  //   $comments.toggle('click', function(){
-  //     $comments.css('display', 'block');
-  //     $('#show-comments').text("Hide Comments");
-  //   });
-  // });
   $('.edit-comment').on('click', function(e) {
     e.preventDefault();
     var $self = $(this);
