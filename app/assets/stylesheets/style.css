@@ -3,6 +3,19 @@ body {
   background-color: #DDD1B9;
 }
 
+pre {
+  background-color: #FCF7E4;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  border-color: #B5B853 #B5B853 #B5B853 #484D56;
+  border-width: 1px;
+}
+
+.profilepic {
+  border-color: #B5B853 #B5B853 #B5B853 #484D56;
+  border-width: 4px;
+}
+
 .content-container {
   padding-top: 90px;
 }
