@@ -112,3 +112,7 @@ input[type="submit"], button {
   border-radius: 5px;
 }
 
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
