@@ -20,9 +20,6 @@ body {
   color: #4B8FAD;
 }
 
-a {
- color: #4B8FAD;
-}
 
 #loginform, #signupform {
   border: 5px solid #484D56;
@@ -47,8 +44,8 @@ ul {
 }
 
 input#yelperLink {
-  height: 30%;
-  width: 30%;
+  height: 18%;
+  width: 18%;
   border-bottom: 5px solid #484D56;
 }
 
@@ -87,3 +84,10 @@ input#yelperLink:hover {
   color: #555;
 }
 
+a, .navbar-links {
+ color: #4B8FAD;
+}
+
+#bs-example-navbar-collapse-1 {
+  position: right;
+}
