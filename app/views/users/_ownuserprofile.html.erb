@@ -9,7 +9,7 @@
 <div class='col-md-7' style="float:right">
   <br/>
   <br/>
-  <p><h4>Your Reviews</h4></p>
+  <p><h3>Your Reviews</h3></p>
   <% @user.comments.each do |comment| %>
     <pre>
     <b>Restaurant: </b><%= link_to "#{comment.food.restaurant.name}", food_restaurant_path(comment.food_id, comment.food.restaurant_id) %><br/>
