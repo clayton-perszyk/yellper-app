@@ -1,6 +1,6 @@
  <button type="button" id="show-comments">Show Comments</button>
   <div class="comments">
-    <% if @food.comments.count > 0 %>
+    <% if @food.comments.count %>
     <% @food.comments.reverse.each do |comment| %>
       <ul>
         <li>
@@ -11,7 +11,7 @@
           </div>
           Author:
             <% if comment.user != nil %>
-              <%= comment.user.username %>
+              <%= link_to "#{comment.user.username}", user_path(comment.user.id) %>
             <% else %>
               <%= "N/A" %>
             <% end %>

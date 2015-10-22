@@ -16,7 +16,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -29,7 +29,7 @@
         <!-- <ul class="nav navbar-nav"> -->
           <!-- Change users_path to user_path[id] once merged -->
           <% if @current_user != nil%>
-          <li class="active"><%= link_to 'My Account', user_path(@current_user) %><span class="sr-only">(current)</span></li>
+          <li class="active"><%= link_to 'My Account', user_path(@current_user), id:"myAccount" %><span class="sr-only">(current)</span></li>
           <% end %>
         <!-- </ul> -->
           <div  class="navbar-form navbar-left" >
@@ -56,7 +56,7 @@
   </div>
 </nav>
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-10 col-md-offset-1 content-container">
     <!-- render errors if any -->
     <%= render 'shared/flash' %>
     <%= yield %>
