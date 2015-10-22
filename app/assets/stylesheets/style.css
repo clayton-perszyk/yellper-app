@@ -3,6 +3,10 @@ body {
   background-color: #DDD1B9;
 }
 
+.content-container {
+  padding-top: 90px;
+}
+
 .stockPhoto {
   height: 50%;
   width: 50%;
@@ -32,6 +36,7 @@ ul {
 }
 
 .ui-autocomplete {
+  z-index: 215;
   background-color: rgba(252, 247, 228, 0.81);
   width: 146px;
   border: 1px solid #484D56;
@@ -84,6 +89,21 @@ input#yelperLink:hover {
   color: #555;
 }
 
+a, .navbar-links {
+ color: #4B8FAD;
+}
+
+.navbar-header {
+  width: 100%;
+}
+
+#yelperLink {
+  padding: 0;
+  margin: 0;
+  max-height: 50px;
+  max-width: 132px;
+}
+
 #bs-example-navbar-collapse-1 {
   position: right;
 }
@@ -115,4 +135,5 @@ input[type="submit"], button {
 .ui-helper-hidden-accessible {
   display: none;
 }
+
 
