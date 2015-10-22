@@ -1,5 +1,5 @@
 <h2> Hello, <%= @user.username %>! </h2>
-<img src="<%= @user.image %>" alt="profile Picture" />
+<img width='200px' src="<%= @user.image %>" alt="profile Picture" />
 
 <div id="accountInfo">
   <h4>Account Information <small><%= link_to "Edit Account", edit_user_path(@user) %></small></h4>
