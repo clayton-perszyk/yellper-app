@@ -1,5 +1,5 @@
 body {
-  padding-bottom: 1%;
+  padding-bottom: 5%;
   background-color: #DDD1B9;
 }
 
@@ -38,7 +38,7 @@ ul {
 
 .ui-autocomplete {
   z-index: 99;
-  background-color: rgba(252, 247, 228, 0.81);
+  background-color: rgba(252, 247, 228, 0.85);
   width: 146px;
   border: 1px solid #484D56;
   border-radius: 4px;
@@ -109,6 +109,35 @@ a, .navbar-links {
   position: right;
 }
 
+.stars,
+.stars li {
+  display: inline;
+}
+
+.stars li {
+  color: #555;
+  background: #F07455;
+  padding: 2px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.stars {
+  margin-left: -20px;
+}
+
+.map {
+  margin-top: -57px;
+  border: 2.5px solid #4B8FAD;
+}
+
+img.food-image {
+  border: 2.5px solid #4B8FAD;
+  height: 150px;
+  width: 175px;
+  margin-top: 26px;
+}
+
 #myAccount {
   color: #B5B853;
   background-color: #484D56;
@@ -136,5 +165,3 @@ input[type="submit"], button {
 .ui-helper-hidden-accessible {
   display: none;
 }
-
-
