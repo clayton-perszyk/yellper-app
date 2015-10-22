@@ -55,3 +55,7 @@ input#yelperLink {
 input#yelperLink:hover {
   border-bottom: 5px solid #B5B853;
 }
+
+.navbar-left {
+  position: right;
+}
