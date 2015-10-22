@@ -16,24 +16,17 @@
     <b>Food: </b><%= link_to "#{comment.food.name}", food_path(comment.food_id) %><br/>
     <b>Comment: </b><%= comment.text %><br/>
     <b>Rating: </b><%= num_to_stars(comment.rating) %>
-
-
-          <div class="comment-container">
-            <div class='edit' hidden>
-              <%= form_for [comment.food, comment], url: comment_path(comment.id), method: :patch do |f| %>
-              <%= f.label :text, "Description" %>:
-              <%= f.text_area :text, value: "#{comment.text}"%><br>
-              <%= f.label :rating %>:
-              <%= f.number_field :rating, max: 5, min: 0, value: "#{comment.rating}" %><br>
-              <%= f.submit "Edit Comment"%>
-            </div>
-          <% end %>
-          <a class='edit-comment'>Edit Comment</a> |
-          <%= link_to "Delete", comment, method: :delete, data: {confirm: "Are you sure?"}%>
-
-
-
-
+      <div class="comment-container">
+        <div class='edit' hidden>
+          <%= form_for [comment.food, comment], url: comment_path(comment.id), method: :patch do |f| %>
+          <%= f.label :text, "Description" %>:
+          <%= f.text_area :text, value: "#{comment.text}"%><br>
+          <%= f.label :rating %>:
+          <%= f.number_field :rating, max: 5, min: 0, value: "#{comment.rating}" %><br>
+          <%= f.submit "Edit Comment"%>
+        </div>
+      <% end %>
+      <a class='edit-comment'>Edit Comment</a> | <%= link_to "Delete", comment, method: :delete, data: {confirm: "Are you sure?"}%>
     </pre>
   <% end %>
 </div>
