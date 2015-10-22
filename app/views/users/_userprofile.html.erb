@@ -1,6 +1,5 @@
 <h2> <%= @user.username %>'s Profile</h2>
 <img width='200px' src="<%= @user.image %>" alt="profile Picture" />
-
 <div>
   <p><h4><%= @user.username %>'s Reviews</h4></p>
   <% @user.comments.each do |comment| %>
