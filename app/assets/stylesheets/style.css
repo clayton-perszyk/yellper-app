@@ -18,6 +18,7 @@ pre {
 
 .content-container {
   padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 .stockPhoto {
@@ -128,7 +129,7 @@ a, .navbar-links {
 }
 
 .stars li {
-  color: #555;
+  color: #eee;
   background: #F07455;
   padding: 2px;
   border-radius: 5px;
@@ -177,4 +178,41 @@ input[type="submit"], button {
 
 .ui-helper-hidden-accessible {
   display: none;
+}
+
+
+.individual-comment {
+  padding: 15px 0 2px 0;
+}
+
+
+
+.individual-comment > li {
+  margin-bottom: -5px;
+}
+
+.comment-container {
+  font-size: 16px;
+  margin-bottom: -35px;
+}
+
+.individual-comment > li {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.name-link {
+  font-size: 16px;
+}
+
+#show-commnents {
+  padding-right: 2px;
+}
+
+.new-comment {
+  margin-left: -12px;
+}
+
+.comment-display {
+  margin-top: 25px;
 }

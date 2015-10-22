@@ -1,8 +1,8 @@
- <button type="button" id="show-comments">Show Comments</button>
+ <button type="button" id="show-comments">Show Comments</button> | <%= link_to 'Go Back', :back %>
   <div class="comments">
-    <% if @food.comments.count %>
+    <% if @food.comments.count > 0 %>
     <% @food.comments.reverse.each do |comment| %>
-      <ul>
+      <ul class="individual-comment">
         <li>
           Posted <%= time_ago_in_words(comment.created_at) %> ago<br>
           <div class='original-comment'>
@@ -11,7 +11,7 @@
           </div>
           Author:
             <% if comment.user != nil %>
-              <%= link_to "#{comment.user.username}", user_path(comment.user.id) %>
+              <%= link_to "#{comment.user.username}", user_path(comment.user.id), class: "name-link" %>
             <% else %>
               <%= "N/A" %>
             <% end %>
