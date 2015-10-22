@@ -91,3 +91,7 @@ a, .navbar-links {
 #bs-example-navbar-collapse-1 {
   position: right;
 }
+
+.ui-helper-hidden-accessible {
+  display: none;
+}
