@@ -24,7 +24,7 @@ body {
 #loginform, #signupform {
   border: 5px solid #484D56;
   border-radius: 5px;
-  padding: 3px 3px 3px 3px;
+  background-image: url(dish.png);
 }
 
 ul {
