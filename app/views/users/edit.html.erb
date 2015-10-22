@@ -7,10 +7,12 @@
 <% end %>
 
 <%= form_for @user do |f| %>
-  <%= f.text_field :email, placeholder: :email %>
-  <%= f.text_field :location, placeholder: :location %>
+  Email: <%= f.text_field :email, placeholder: :email %>
+  <br/>
+  Location: <%= f.text_field :location, placeholder: :location %>
   <%= f.submit %>
 <% end %>
 
 <%= link_to "Go Back", user_path(@user) %>
+<br/>
 <%= link_to "Want to change your password?", new_reset_path %>
