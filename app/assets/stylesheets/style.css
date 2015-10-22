@@ -1,6 +1,19 @@
 body {
-  padding-bottom: 1%;
+  padding-bottom: 5%;
   background-color: #DDD1B9;
+}
+
+pre {
+  background-color: #FCF7E4;
+  font-family: 'Helvetica Neue';
+  font-size: 14px;
+  border-color: #B5B853 #B5B853 #B5B853 #484D56;
+  border-width: 1px;
+}
+
+.profilepic {
+  border-color: #B5B853 #B5B853 #B5B853 #484D56;
+  border-width: 4px;
 }
 
 .content-container {
@@ -39,7 +52,7 @@ ul {
 
 .ui-autocomplete {
   z-index: 99;
-  background-color: rgba(252, 247, 228, 0.81);
+  background-color: rgba(252, 247, 228, 0.85);
   width: 146px;
   border: 1px solid #484D56;
   border-radius: 4px;
@@ -116,8 +129,8 @@ a, .navbar-links {
 }
 
 .stars li {
-  color: #eee;
-  background: tomato;
+  color: #555;
+  background: #F07455;
   padding: 2px;
   border-radius: 5px;
   margin: 2px;
