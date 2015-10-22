@@ -32,7 +32,7 @@ ul {
 }
 
 .ui-autocomplete {
-  background-color: rgba(75, 143, 175, 0.71);
+  background-color: rgba(252, 247, 228, 0.81);
   width: 146px;
   border: 1px solid #484D56;
   border-radius: 4px;
@@ -54,7 +54,7 @@ input#yelperLink:hover {
 }
 
 #food_name {
-  background-color: #4B8FAD;
+  background-color: #FCF7E4;
   border: solid 2px #484D56;
   color: #484D56;
 }
@@ -84,10 +84,20 @@ input#yelperLink:hover {
   color: #555;
 }
 
-.navbar-links {
- color: #4B8FAD;
-}
-
 #bs-example-navbar-collapse-1 {
   position: right;
 }
+
+#myAccount {
+  color: #B5B853;
+  background-color: #484D56;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #B5B853;
+}
+
+.navbar-default:hover .navbar-nav>li>a:hover {
+  color: #B5B853;
+}
+
