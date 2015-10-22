@@ -1,5 +1,6 @@
  <button type="button" id="show-comments">Show Comments</button>
   <div class="comments">
+    <% if @food.comments.count > 0 %>
     <% @food.comments.reverse.each do |comment| %>
       <ul>
         <li>
@@ -36,4 +37,8 @@
           <% end %>
         <% end %>
       <% end %>
+    <% else %>
+      <p class="no-comments">Be the first to comment!</p>
+    <% end %>
+
   </div>

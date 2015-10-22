@@ -3,6 +3,7 @@ $(document).ready(function(){
     e.preventDefault();
     $('.comments').toggle('slow', function(){
       var display = $('.comments').css('display');
+      console.log(display);
       if (display == 'none') {
         $('#show-comments').text("Show Comments");
       } else {
