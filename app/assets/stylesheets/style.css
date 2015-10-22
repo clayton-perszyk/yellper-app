@@ -11,6 +11,24 @@ pre {
   border-width: 1px;
 }
 
+.edit {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-size: 12px;
+}
+
+.comment-container.userpage {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-size: 12px;
+}
+
+.edit {
+  padding: 0px;
+}
+
 .profilepic {
   border-color: #B5B853 #B5B853 #B5B853 #484D56;
   border-width: 4px;
