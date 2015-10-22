@@ -109,6 +109,35 @@ a, .navbar-links {
   position: right;
 }
 
+.stars,
+.stars li {
+  display: inline;
+}
+
+.stars li {
+  color: #555;
+  background: tomato;
+  padding: 2px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.stars {
+  margin-left: -20px;
+}
+
+.map {
+  margin-top: -57px;
+  border: 2.5px solid #4B8FAD;
+}
+
+img.food-image {
+  border: 2.5px solid #4B8FAD;
+  height: 150px;
+  width: 175px;
+  margin-top: 26px;
+}
+
 #myAccount {
   color: #B5B853;
   background-color: #484D56;
@@ -136,5 +165,3 @@ input[type="submit"], button {
 .ui-helper-hidden-accessible {
   display: none;
 }
-
-

@@ -1,20 +1,20 @@
-<div class="col-md-12 test">
+<div class="col-md-6 test">
   <% if @restaurant %>
       <div class='row'>
-        <div class='col-md-3'>
+        <div class='col-md-5'>
           <% if @restaurant.image %>
-            <img src='<%= @restaurant.image %>' width = '150px' />
+            <img src='<%= @restaurant.image %>' width='150px' class="food-image"/>
           <% end %>
         </div>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <div class='col-md-9'>
+        <div class='col-md-5'>
           <% if @restaurant.name %>
             <% if @restaurant.url %>
               <h1><%= link_to "#{@restaurant.name}", @restaurant.url, :target => "_blank" %></h1>
             <% end %>
             <br/>
             <% if @restaurant.rating_stars %>
-              <img src='<%= @restaurant.rating_stars %>' />
+              <img src='<%= @restaurant.rating_stars %>' /><br>
               ( <%= @restaurant.review_count %> reviews )
             <% end %>
           <% end %>
@@ -45,4 +45,6 @@
 </br>
 </br>
 </br>
-<img src=<%= @mapImage %> alt="" />
+<div class="col-md-6">
+  <img class="map" src=<%= @mapImage %> alt="" />
+</div>
