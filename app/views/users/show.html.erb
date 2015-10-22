@@ -1,22 +1,5 @@
-<h2> Hello, <%= @user.username %>! </h2>
-<img src="<%= @user.image %>" alt="profile Picture" />
-
-<div id="accountInfo">
-  <h4>Account Information
-    <% if current_user.id == @user.id %>
-      <small><%= link_to "Edit Account", edit_user_path(@user) %></small>
-    <% end %>
-  </h4>
-  <p><b>Email:</b> <%= @user.email %></p>
-  <p><b>Location:</b> <%= @user.location %> </p>
-</div>
-
-<div>
-  <p><h4>Your Comments</h4></p>
-  <% @user.comments.each do |comment| %>
-    <%= comment.food.restaurant.name %><br/>
-    <%= comment.food.name %><br/>
-    <%= comment.text %><br/>
-    <%= comment.rating %><br/>
-  <% end %>
-</div>
+<% if current_user.id == @user.id %>
+  <%= render 'ownuserprofile' %>
+<% else %>
+  <%= render 'userprofile' %>
+<% end %>
