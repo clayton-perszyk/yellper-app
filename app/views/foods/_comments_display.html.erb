@@ -11,7 +11,7 @@
           </div>
           Author:
             <% if comment.user != nil %>
-              <%= comment.user.username %>
+              <%= link_to "#{comment.user.username}", user_path %>
             <% else %>
               <%= "N/A" %>
             <% end %>
