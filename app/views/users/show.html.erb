@@ -1,5 +1,7 @@
-<% if current_user.id == @user.id %>
-  <%= render 'ownuserprofile' %>
-<% else %>
-  <%= render 'userprofile' %>
-<% end %>
+<div class='row'>
+  <% if current_user.id == @user.id %>
+    <%= render 'ownuserprofile' %>
+  <% else %>
+    <%= render 'userprofile' %>
+  <% end %>
+</div>

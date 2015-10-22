@@ -1,8 +1,13 @@
-<h2> <%= @user.username %>'s Profile</h2>
-<img width='200px' src="<%= @user.image %>" alt="profile Picture" />
+<div id="accountInfo" class='col-md-5' style="position:fixed">
+  <h2> <%= @user.username %>'s Profile</h2>
+  <img width='200px' src="<%= @user.image %>" alt="profile Picture" />
+</div>
 
-<div>
+<div class='col-md-7' style="float:right">
+  <br/>
+  <br/>
   <p><h4><%= @user.username %>'s Reviews</h4></p>
+  <br/>
   <% @user.comments.each do |comment| %>
     <b>Restaurant: </b><%= link_to "#{comment.food.restaurant.name}", food_restaurant_path(comment.food_id, comment.food.restaurant_id) %><br/>
     <b>Food: </b><%= link_to "#{comment.food.name}", food_path(comment.food_id) %><br/>
