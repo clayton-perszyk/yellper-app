@@ -29,7 +29,7 @@
         <!-- <ul class="nav navbar-nav"> -->
           <!-- Change users_path to user_path[id] once merged -->
           <% if @current_user != nil%>
-          <li class="active"><%= link_to 'My Account', user_path(@current_user) %><span class="sr-only">(current)</span></li>
+          <li class="active"><%= link_to 'My Account', user_path(@current_user), id:"myAccount" %><span class="sr-only">(current)</span></li>
           <% end %>
         <!-- </ul> -->
           <div  class="navbar-form navbar-left" >

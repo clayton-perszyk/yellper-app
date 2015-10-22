@@ -44,8 +44,8 @@ ul {
 }
 
 input#yelperLink {
-  height: 18%;
-  width: 18%;
+  height: 17%;
+  width: 17%;
   border-bottom: 5px solid #484D56;
 }
 
@@ -84,7 +84,7 @@ input#yelperLink:hover {
   color: #555;
 }
 
-a, .navbar-links {
+.navbar-links {
  color: #4B8FAD;
 }
 
