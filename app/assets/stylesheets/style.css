@@ -71,3 +71,12 @@ input#yelperLink:hover {
   margin-top: 7%;
   margin-bottom: 3%;
 }
+
+.comments {
+  display: none;
+}
+
+.no-comments {
+  font-size: 20px;
+  color: #555;
+}
