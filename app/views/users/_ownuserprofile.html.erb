@@ -12,7 +12,7 @@
     <b>Restaurant: </b><%= link_to "#{comment.food.restaurant.name}" %><br/>
     <b>Food: </b><%= link_to "#{comment.food.name}" %><br/>
     <b>Comment: </b><%= comment.text %><br/>
-    <b>Rating: </b><%= comment.rating %><br/>
+    <b>Rating: </b><%= num_to_stars(comment.rating) %><br/>
     <br/>
   <% end %>
 </div>
