@@ -2,10 +2,21 @@
 <img src="<%= @user.image %>" alt="profile Picture" />
 
 <div id="accountInfo">
-  <p>Account Information</p>
-  <p>Email: <%= @user.email %></p>
-  <p>Location: <%= @user.location %> </p>
-  <%= link_to "Edit Account", edit_user_path(@user) %>
+  <h4>Account Information
+    <% if current_user.id == @user.id %>
+      <small><%= link_to "Edit Account", edit_user_path(@user) %></small>
+    <% end %>
+  </h4>
+  <p><b>Email:</b> <%= @user.email %></p>
+  <p><b>Location:</b> <%= @user.location %> </p>
 </div>
 
-<%= link_to 'Had enough? Log out!', logout_path, method: :delete %>
+<div>
+  <p><h4>Your Comments</h4></p>
+  <% @user.comments.each do |comment| %>
+    <%= comment.food.restaurant.name %><br/>
+    <%= comment.food.name %><br/>
+    <%= comment.text %><br/>
+    <%= comment.rating %><br/>
+  <% end %>
+</div>
