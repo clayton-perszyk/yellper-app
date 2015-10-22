@@ -12,7 +12,7 @@
     <div class="comments">
     <% food.comments.each do |comment| %>
       <ul>
-        Author: <%= comment.user %><br/>
+        Author: <%= comment.user.username %><br/>
         Rating: <%= comment.rating%><br/>
         Description: <%= comment.text %>
       </ul>
