@@ -1,4 +1,4 @@
-<div id="accountInfo" class='col-md-5' fixed>
+<div id="accountInfo" class='col-md-5' style="position:fixed">
   <h2> Hello, <%= @user.username %>! </h2>
   <img width='200px' src="<%= @user.image %>" alt="profile Picture" />
   <h4>Account Information <small><%= link_to "Edit Account", edit_user_path(@user) %></small></h4>
@@ -6,16 +6,17 @@
   <p><b>Location: </b> <%= @user.location %> </p>
 </div>
 
-<div class='col-md-7'>
+<div class='col-md-7' style="float:right">
   <br/>
   <br/>
   <p><h4>Your Reviews</h4></p>
   <% @user.comments.each do |comment| %>
+    <pre>
     <b>Restaurant: </b><%= link_to "#{comment.food.restaurant.name}", food_restaurant_path(comment.food_id, comment.food.restaurant_id) %><br/>
     <b>Food: </b><%= link_to "#{comment.food.name}", food_path(comment.food_id) %><br/>
     <b>Comment: </b><%= comment.text %><br/>
-    <b>Rating: </b><%= num_to_stars(comment.rating) %><br/>
-    <br/>
+    <b>Rating: </b><%= num_to_stars(comment.rating) %>
+    </pre>
   <% end %>
 </div>
 
