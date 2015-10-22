@@ -6,7 +6,7 @@
         <li>
           Posted <%= time_ago_in_words(comment.created_at) %> ago<br>
           <div class='original-comment'>
-            Rating: <%= num_to_stars(comment.rating) %><br>
+            Rating: <span class="stars"><%= num_to_stars(comment.rating) %></span><br>
             Description: <%= comment.text %><br>
           </div>
           Author:
