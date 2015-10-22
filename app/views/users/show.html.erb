@@ -12,11 +12,15 @@
 </div>
 
 <div>
-  <p><h4>Your Comments</h4></p>
+  <% if current_user.id == @user.id %>
+    <p><h4>Your Reviews</h4></p>
+  <% else %>
+    <p><h4><%= @user.username %>'s Reviews</h4></p>
+  <% end %>
   <% @user.comments.each do |comment| %>
-    <%= comment.food.restaurant.name %><br/>
-    <%= comment.food.name %><br/>
-    <%= comment.text %><br/>
-    <%= comment.rating %><br/>
+    <b>Restaurant: </b><%= link_to "#{comment.food.restaurant.name}" %><br/>
+    <b>Food: </b><%= link_to "#{comment.food.name}", food_path %><br/>
+    <b>Comment: </b><%= comment.text %><br/>
+    <b>Rating: </b><%= comment.rating %><br/>
   <% end %>
 </div>
