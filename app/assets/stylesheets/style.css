@@ -101,3 +101,14 @@ input#yelperLink:hover {
   color: #B5B853;
 }
 
+input[type="text"], input[type="password"], input[type="number"], textarea {
+  background-color: #FCF7E4;
+  color: #484D56;
+}
+
+input[type="submit"], button {
+  background-color: #FCF7E4;
+  color: #484D56;
+  border-radius: 5px;
+}
+
