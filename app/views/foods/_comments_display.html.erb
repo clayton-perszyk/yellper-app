@@ -1,6 +1,6 @@
  <button type="button" id="show-comments">Show Comments</button>
   <div class="comments">
-    <% if @food.comments.count > 0 %>
+    <% if @food.comments.count %>
     <% @food.comments.reverse.each do |comment| %>
       <ul>
         <li>
