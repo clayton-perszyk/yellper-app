@@ -15,6 +15,7 @@ body {
 }
 
 .navbar {
+  z-index: 25;
   background-color: #484D56;
   color: #4B8FAD;
 }
@@ -36,7 +37,7 @@ ul {
 }
 
 .ui-autocomplete {
-  z-index: 215;
+  z-index: 99;
   background-color: rgba(252, 247, 228, 0.81);
   width: 146px;
   border: 1px solid #484D56;
