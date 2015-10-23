@@ -5,14 +5,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    if comment_params.text == nil
-      flash[:alert] = "Problem updating comment. Please fill in comment before submitting."
-      render :edit
-    end
-    if comment_params.rating == nil
-      flash[:alert] = "Problem updating comment. Please fill in rating before submitting."
-      render :edit
-    end
     @food = Food.find(params[:food_id])
     @comment = Comment.new(comment_params)
     if @comment.save
@@ -25,7 +17,7 @@ class CommentsController < ApplicationController
       redirect_to @food
     else
       flash[:alert] = "Problem adding comment. Try again."
-      render 'foods/show'
+      redirect_to @food
     end
   end
 
