@@ -16,7 +16,8 @@ blockquote {
 }
 
 .comment-page-image {
-  padding: 5px;
+  margin: 5px;
+  border: 4px solid #B5B853;
 }
 
 .links a {
