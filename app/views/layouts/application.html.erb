@@ -23,33 +23,31 @@
       <%= form_for Food.new, url: random_path, method: :get do |f| %>
         <%= f.submit "Yelper", :type => :image, :src => "/assets/logoHover.png", class: "navbar-brand", id: "yelperLink"%>
       <% end %>
-      <ul class="nav navbar-nav">
-      <% if @current_user != nil%>
-      <li class="active"><%= link_to 'My Account', user_path(@current_user), id:"myAccount" %><span class="sr-only">(current)</span></li>
-      <% end %>
-      </ul>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right col-xs-5">
         <!-- <ul class="nav navbar-nav"> -->
           <!-- Change users_path to user_path[id] once merged -->
         <!-- </ul> -->
-          <div  class="navbar-form navbar-left col-xs-1" >
-            <%= form_for Food.new, url: food_search_path, method: :get do |f| %>
-              <%= f.autocomplete_field :name, autocomplete_search_query_foods_path, class: "form-control", style: "width: 71%;", placeholder: "Enter Food Search" %>
-              <%= f.submit "search", class: "btn btn-default" %>
+        <div  class="navbar-form navbar-left" >
+          <%= form_for Food.new, url: food_search_path, method: :get do |f| %>
+            <%= f.autocomplete_field :name, autocomplete_search_query_foods_path, class: "form-control", style: "width: 71%;", placeholder: "Enter Food Search" %>
+            <%= f.submit "search", class: "btn btn-default" %>
+          <% end %>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <div class="navbar-right"> -->
+            <!-- if user is logged in  -->
+            <% if @current_user != nil%>
+              <li class="active"><%= link_to 'My Account', user_path(@current_user), id:"myAccount" %><span class="sr-only">(current)</span></li>
+              <li><%= link_to 'Logout', logout_path, method: :delete, class: "navbar-links" %></li>
             <% end %>
-          </div>
-          <!-- if user is logged in  -->
-          <% if @current_user != nil%>
-          <li><%= link_to 'Logout', logout_path, method: :delete, class: "navbar-links" %></li>
-          <% end %>
-         <!--  else -->
-          <% if @current_user == nil%>
-          <li><%= link_to 'Login', login_path, class: "navbar-links" %></li>
-          <li><%= link_to 'Signup', signup_path, class: "navbar-links" %></li>
-          <% end %>
-          <!-- end -->
+           <!--  else -->
+            <% if @current_user == nil%>
+              <li><%= link_to 'Login', login_path, class: "navbar-links" %></li>
+              <li><%= link_to 'Signup', signup_path, class: "navbar-links" %></li>
+            <% end %>
+            <!-- end -->
+          <!-- </div> -->
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

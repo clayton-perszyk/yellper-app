@@ -218,7 +218,11 @@ input[type="submit"], button {
   padding: 15px 0 2px 0;
 }
 
-
+.navbar-form {
+  margin-left: 50px;
+  width: 50%;
+  min-width: 300px;
+}
 
 .individual-comment > li {
   margin-bottom: -5px;
