@@ -27,4 +27,9 @@ $(document).ready(function(){
       }
     });
   });
+
+  $('.no-comments').on('click', function(e){
+    e.preventDefault();
+    $('.add-comment').focus();
+  });
 });
