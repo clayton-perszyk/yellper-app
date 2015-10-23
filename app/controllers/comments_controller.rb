@@ -39,12 +39,11 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-
     if current_user.id == @comment.user.id
       @food = Food.find(@comment.food.id)
       @comment.destroy
       flash[:success] = "Comment deleted successfully."
-      redirect_to @food
+      redirect_to :back
     else
       flash[:alert] = "Problem with delete"
       redirect_to :back
