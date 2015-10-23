@@ -11,6 +11,10 @@ pre {
   border-width: 1px;
 }
 
+blockquote {
+  border-color: #B5B853;
+}
+
 .links a {
   color: #484D56;
 }
