@@ -78,7 +78,7 @@ ul {
 
 .ui-autocomplete {
   z-index: 99;
-  background-color: rgba(252, 247, 228, 0.85);
+  background-color: rgba(252, 247, 228, 1);
   width: 146px;
   border: 1px solid #484D56;
   border-radius: 4px;
