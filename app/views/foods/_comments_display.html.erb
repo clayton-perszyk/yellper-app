@@ -6,7 +6,7 @@
         <li>
           Posted <%= time_ago_in_words(comment.created_at) %> ago<br>
           <div class='original-comment'>
-            Rating: <span class="stars"><%= num_to_stars(comment.rating) %></span><br>
+            Rating: <span class="stars"><%= num_to_stars(comment.rating) if comment.rating %></span><br>
             Description: <%= comment.text %><br>
           </div>
           Author:
@@ -40,7 +40,7 @@
         <% end %>
       <% end %>
     <% else %>
-      <p class="no-comments">Be the first to comment!</p>
+      <a class="no-comments" href="#">Be the first to comment!</a>
     <% end %>
 
   </div>
