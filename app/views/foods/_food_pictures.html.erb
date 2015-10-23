@@ -1,5 +1,7 @@
 <% @food.comments.reverse.each do |comment| %>
   <% if comment.image != '' && comment.image != nil %>
-    <img src="#{comment.image}" alt='picture of food' width="100px" />
+    <div class="col-md-1">
+      <img src="<%=comment.image%>" alt='picture of food' />
+    </div>
   <% end %>
 <% end %>
