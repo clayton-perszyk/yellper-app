@@ -1,32 +1,32 @@
-  <div id='welcomeImg' class="row col-md-4">
-    <img src='assets/pho.jpg' alt='food pic' class="stockPhoto" />
-    <img src='assets/burgers.jpg' alt='food pic' class="stockPhoto" />
-    <img src='assets/salad.jpg' alt='food pic' class="stockPhoto" />
-  </div>
+<div id='welcomeImg' class="row col-md-4">
+  <img src='assets/pho.jpg' alt='food pic' class="stockPhoto" />
+  <img src='assets/burgers.jpg' alt='food pic' class="stockPhoto" />
+  <img src='assets/salad.jpg' alt='food pic' class="stockPhoto" />
+</div>
 <!-- <div class="row"> -->
-  <div id="signupform" class="col-md-6">
-    <%= form_for(@user, url: signup_path) do |f|%>
-      <p>Username:
-        <%= f.text_field :username, autofocus: true %>
-      </p>
-      <p>Password:
-        <%= f.text_field :password, required: true, type: "password"%>
-      </p>
-      <p>Location:
-        <%= f.text_field :location, required: true %>
-      </p>
-      <p>Email:
-        <%= f.text_field :email, required: true %>
-      </p>
-      <p>Image:
-        <%= f.text_field :image %>
-      </p>
-      <p>
-        <%= f.submit "Signup", class: "btn btn-primary" %>
-      </p>
-      <div class='links'>
-        <%= link_to "Have an account already? Log in here", login_path %>
-      </div>
-    <% end %>
-  </div>
+<div id="signupform" class="col-md-6">
+  <%= form_for(@user, url: signup_path) do |f|%>
+    <p>Username:
+      <%= f.text_field :username, autofocus: true %>
+    </p>
+    <p>Password:
+      <%= f.text_field :password, required: true, type: "password"%>
+    </p>
+    <p>Location:
+      <%= f.text_field :location, required: true %>
+    </p>
+    <p>Email:
+      <%= f.text_field :email, required: true %>
+    </p>
+    <p>Image:
+      <%= f.text_field :image %>
+    </p>
+    <p>
+      <%= f.submit "Signup", class: "btn btn-primary" %>
+    </p>
+    <div class='links'>
+      <%= link_to "Have an account already? Log in here", login_path %>
+    </div>
+  <% end %>
+</div>
 
