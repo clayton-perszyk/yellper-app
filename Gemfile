@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'puma'
 gem 'seed_dump'
 gem 'yelp'
 gem 'bootstrap3-rails'
