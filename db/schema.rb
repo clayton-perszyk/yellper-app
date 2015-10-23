@@ -31,13 +31,9 @@ ActiveRecord::Schema.define(version: 20151023143900) do
     t.string   "name"
     t.string   "image"
     t.integer  "restaurant_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.text     "description"
-    t.string   "food_image_file_name"
-    t.string   "food_image_content_type"
-    t.integer  "food_image_file_size"
-    t.datetime "food_image_updated_at"
   end
 
   create_table "restaurants", force: :cascade do |t|
