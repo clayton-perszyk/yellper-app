@@ -9,6 +9,10 @@ class CommentsController < ApplicationController
       flash[:alert] = "Problem updating comment. Please fill in comment before submitting."
       render :edit
     end
+    if comment_params.rating == nil
+      flash[:alert] = "Problem updating comment. Please fill in rating before submitting."
+      render :edit
+    end
     @food = Food.find(params[:food_id])
     @comment = Comment.new(comment_params)
     if @comment.save
