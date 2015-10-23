@@ -53,7 +53,8 @@
 
 <div class="row">
   <br/>
-  <div class="col-md-10" >
+  <button class="menu-items-button">Click for Menu</button>
+  <div class="col-md-10 menu-items" >
     <b>Click the link for more information</b><br/>
     <% @food.each do |food| %>
       <%= link_to "#{food.name}", food_path(food.id) %>

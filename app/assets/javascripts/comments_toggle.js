@@ -32,4 +32,18 @@ $(document).ready(function(){
     e.preventDefault();
     $('.add-comment').focus();
   });
+
+  $('.menu-items-button').on('click', function(e){
+    e.preventDefault();
+    $('.menu-items').toggle('slow', function(){
+      var display = $('.menu-items').css('display');
+      if (display == 'none') {
+        $('.menu-items-button').text("Show Menu");
+      } else {
+        $('.menu-items-button').text("Hide Menu");
+      }
+    });
+  });
+
+
 });
