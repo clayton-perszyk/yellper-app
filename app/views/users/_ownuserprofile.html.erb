@@ -27,6 +27,9 @@
           <%= f.text_area :text, value: "#{comment.text}"%><br>
           <%= f.label :rating %>:
           <%= f.number_field :rating, max: 5, min: 0, value: "#{comment.rating}" %><br/>
+          <%= f.label :image %>:
+          <%= f.text_field :image, value: "#{comment.image}" %>
+          <br/>
           <%= f.submit "Edit Comment"%>
         </div>
       <% end %>
