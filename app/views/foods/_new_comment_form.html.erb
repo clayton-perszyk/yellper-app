@@ -2,9 +2,9 @@
   <h3>Add A Comment</h3>
   <div class="new-comment col-md-4">
       <%= form_for [@food, @comment], class: "new-comment" do |f| %>
-        <%= f.label :text %>:
-        <%= f.text_area :text %><br>
-        <%= f.label :rating %>:
+        <%= f.label :text %>
+        <%= f.text_area :text %>
+        <%= f.label :rating %>
         <%= f.number_field :rating, max: 5, min: 0 %><br><br>
         <%= f.submit %>
       <% end %>
