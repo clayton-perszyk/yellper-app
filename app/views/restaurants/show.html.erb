@@ -38,6 +38,9 @@
         <% else %>
           No restaurant reviews at this time.
         <% end %>
+        <br/>
+        <br/>
+        <button class="menu-items-button">Click for Menu</button>
     <% else %>
      Something went wrong. <%= link_to 'Go Back', :back %>
     <% end %>
@@ -50,14 +53,13 @@
     <img class="map" src=<%= @mapImage %> alt="" />
   </div>
 </div>
-
+<br/>
+<br/>
 <div class="row">
-  <br/>
-  <button class="menu-items-button">Click for Menu</button>
-  <div class="col-md-10 menu-items" >
-    <b>Click the link for more information</b><br/>
+  <div class="col-md-10 menu-items" hidden>
+    <h4>Click the link for more information</h4>
     <% @food.each do |food| %>
-      <%= link_to "#{food.name}", food_path(food.id) %>
+      <%= link_to "#{food.name}", food_path(food.id), :target => "_blank"%>
       <br/>
     <% end %>
   </div>
