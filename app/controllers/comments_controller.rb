@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
       redirect_to @food
     else
       flash[:alert] = "Problem adding comment. Try again."
-      render 'foods/show'
+      redirect_to @food
     end
   end
 
