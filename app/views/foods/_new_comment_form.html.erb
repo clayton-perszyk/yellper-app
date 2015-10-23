@@ -3,9 +3,9 @@
   <div class="new-comment col-md-4">
       <%= form_for [@food, @comment], class: "new-comment" do |f| %>
         <%= f.label :text %>
-        <%= f.text_area :text %>
+        <%= f.text_area :text, :presence => true%>
         <%= f.label :rating %>
-        <%= f.number_field :rating, max: 5, min: 0 %><br>
+        <%= f.number_field :rating, max: 5, min: 0, :presence => true%><br>
         <%= f.label :image %>
         <%= f.text_field :image %><br/><br/>
         <%= f.submit %>
