@@ -15,6 +15,10 @@ blockquote {
   border-color: #B5B853;
 }
 
+.comment-page-image {
+  padding: 5px;
+}
+
 .links a {
   color: #484D56;
 }

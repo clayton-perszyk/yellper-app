@@ -1,7 +1,5 @@
 <% @food.comments.reverse.each do |comment| %>
   <% if comment.image != '' && comment.image != nil %>
-
-    <a href='<%=comment.image%>' target='_blank'><img src="<%=comment.image%>" alt='picture of food' width='150px'/></a>
-
+    <a href='<%=comment.image%>' target='_blank'><img src="<%=comment.image%>" alt='picture of food' height="150px" class='comment-page-image'/></a>
   <% end %>
 <% end %>
