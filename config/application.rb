@@ -29,26 +29,26 @@ module Yellper
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.precompile += [
-      '2half.pxm'
-      'burgers.jpg'
-      'dish.png'
-      'logo.png'
-      'logoHover.png'
-      'pho.jpg'
-      'salad.jpg'
-      'yelp_0_star.png'
-      'yelp_1_half_star.png'
-      'yelp_1_star.png'
-      'yelp_2_half_star.png'
-      'yelp_2_star.png'
-      'yelp_3_half_star.png'
-      'yelp_3_star.png'
-      'yelp_4_half_star.png'
-      'yelp_4_star.png'
-      'yelp_5_star.pxm'
-      'application.js'
-      'comments_toggle.js'
-      'application.css'
+      '2half.pxm',
+      'burgers.jpg',
+      'dish.png',
+      'logo.png',
+      'logoHover.png',
+      'pho.jpg',
+      'salad.jpg',
+      'yelp_0_star.png',
+      'yelp_1_half_star.png',
+      'yelp_1_star.png',
+      'yelp_2_half_star.png',
+      'yelp_2_star.png',
+      'yelp_3_half_star.png',
+      'yelp_3_star.png',
+      'yelp_4_half_star.png',
+      'yelp_4_star.png',
+      'yelp_5_star.pxm',
+      'application.js',
+      'comments_toggle.js',
+      'application.css',
       'style.css'
     ]
 
